@@ -7,5 +7,9 @@
 
 import Foundation
 
-class WeatherVM {
+class WeatherViewModel {
+
+    func disAppear() {
+        print("disappear")
+    }
 }

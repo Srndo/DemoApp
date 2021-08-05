@@ -26,9 +26,14 @@ class CustomCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func set(cell: CellViewModel) {
+    func set(cell: CellModel) {
         self.image.image = cell.image
         self.label.text = "\(cell.id) - \(cell.name)"
+    }
+
+    func set(customCellModel: CustomCellModel) {
+        self.image.image = customCellModel.image
+        self.label.text = customCellModel.text
     }
 
     private func configureImage() {
@@ -56,8 +61,12 @@ class CustomCell: UITableViewCell {
     }
 }
 
+protocol CustomCellModel {
+    var image: UIImage { get }
+    var text: String { get }
+}
 
-struct CellViewModel {
+struct CellModel {
     var id: Int
     var image: UIImage = UIImage(named: "placeholder")!
     var name: String

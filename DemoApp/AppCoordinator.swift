@@ -8,18 +8,25 @@
 import UIKit
 
 class AppCoordinator: Coordinator {
-    var viewController: UINavigationController?
+
+    var window: UIWindow?
     var childCoordinators: [Coordinator] = []
     var parentCoordinator: Coordinator?
 
-    required init(_ viewController: UINavigationController?) {
-        self.viewController = viewController
+    required init(_ window: UIWindow?) {
+        self.window = window
+
     }
 
     func start() {
-        let mainCoordinator = MainC(viewController)
+        let navigationViewController = UINavigationController()
+
+        window?.rootViewController = navigationViewController
+
+        let mainCoordinator = MainCoordinator(window: window)
         childCoordinators.append(mainCoordinator)
         mainCoordinator.start()
+        print((window?.rootViewController as? UINavigationController)?.viewControllers)
     }
 
 }

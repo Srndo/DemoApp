@@ -7,30 +7,35 @@
 
 import UIKit
 
-class MainC: Coordinator {
-    var viewController: UINavigationController?
+class MainCoordinator: Coordinator {
+    var window: UIWindow?
+    var viewController: MainViewController?
     var childCoordinators: [Coordinator] = []
     var parentCoordinator: Coordinator?
 
-    required init(_ viewController: UINavigationController?) {
-        self.viewController = viewController
+    required init(window: UIWindow?) {
+        self.window = window
     }
 
     func start() {
-        var vc: UIViewController & Coordinating = MainVC()
-        vc.coordinator = self
-        viewController?.setViewControllers([vc], animated: false)
+
+        let viewModel = MainViewModel(coordinator: self)
+        viewController = MainViewController(viewModel: viewModel)
+        if let viewController = viewController {
+            let nvc = (window?.rootViewController as? UINavigationController)
+            nvc?.setViewControllers([viewController], animated: false)
+        }
     }
 
     func toWeather() {
-        let coordinator = WeatherC(viewController)
+        let coordinator = WeatherCoordinator(window: self.window)
         childCoordinators.append(coordinator)
         coordinator.parentCoordinator = self
         coordinator.start()
     }
 
     func toTable() {
-        let coordinator = TableC(viewController)
+        let coordinator = TableCoordinator(window: self.window)
         childCoordinators.append(coordinator)
         coordinator.parentCoordinator = self
         coordinator.start()

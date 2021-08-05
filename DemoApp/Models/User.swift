@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct User: Codable {
     let id: Int
@@ -13,6 +14,17 @@ struct User: Codable {
     let address: Address
     let phone, website: String
     let company: Company
+}
+
+extension User: CustomCellModel {
+    var image: UIImage {
+        UIImage(named: "placeholder")!
+    }
+
+    var text: String {
+        return "\(self.id) - \(self.name)"
+    }
+
 }
 
 // MARK: - Address

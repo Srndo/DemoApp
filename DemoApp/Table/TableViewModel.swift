@@ -7,11 +7,18 @@
 
 import UIKit
 
-class TableVM {
-    let title = "Table"
-    var users: [CellViewModel] = []
+class TableViewModel {
 
-    func fetchUsers(completition: @escaping () -> Void) {
+    var coordinator: TableCoordinator!
+
+    init(coordinator: TableCoordinator) {
+        self.coordinator = coordinator
+    }
+
+    let title = "Table"
+    var users: [CellModel] = []
+
+        func fetchUsers(completition: @escaping () -> Void) {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/users/") else { return }
         Networking().fetch(url) { (users, error) in
             if let error = error {
@@ -20,12 +27,23 @@ class TableVM {
             }
             guard let users = users else { return }
             for user in users {
-                self.users.append(CellViewModel(by: user))
+                self.users.append(CellModel(by: user))
             }
             completition()
         }
     }
 
     func filter(key: String, completition: @escaping (() -> [User])) {
+    }
+
+    func disSelect(at indexPath: IndexPath) {
+        guard let userID = users[safe: indexPath.row]?.id else { return }
+        coordinator.toDetail(id: userID)
+    }
+}
+
+extension Collection {
+    subscript(safe index: Index) -> Element? {
+        self.indices.contains(index) ? self[index] : nil
     }
 }

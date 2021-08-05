@@ -25,7 +25,10 @@ class Networking {
             } else if let users = try? JSONDecoder().decode([User].self, from: data) {
                 completition(users, nil)
             } else {
-                completition(nil, NSError(domain: "Coordinator", code: 0, userInfo: [NSLocalizedDescriptionKey: "Cannot decode data from response."]))
+                completition(nil,
+                             NSError(domain: "Coordinator",
+                                     code: 0,
+                                     userInfo: [NSLocalizedDescriptionKey: "Cannot decode data from response."]))
             }
         }
     }

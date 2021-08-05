@@ -7,20 +7,30 @@
 
 import UIKit
 
-class MainVC: UIViewController, Coordinating {
-    var coordinator: Coordinator?
+class MainViewController: UIViewController {
+
+    var viewModel: MainViewModel!
+
+    init(viewModel: MainViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     lazy var button: MyButton = {
-        let button = MyButton(title: "To Weather")
+        let button = MyButton(title: viewModel.titleButton1)
         button.center(to: view.center, 0, -30)
-        button.addTarget(self, action: #selector(toWeather), for: .touchUpInside)
+        button.addTarget(self, action: #selector(button1Tap), for: .touchUpInside)
         return button
     }()
 
     lazy var button2: MyButton = {
-       let button = MyButton(title: "To Table")
+        let button = MyButton(title: viewModel.titleButton2)
         button.center(to: view.center, 0, 30)
-        button.addTarget(self, action: #selector(toTable), for: .touchUpInside)
+        button.addTarget(self, action: #selector(button2Tap), for: .touchUpInside)
         return button
     }()
 
@@ -32,13 +42,12 @@ class MainVC: UIViewController, Coordinating {
         view.addSubview(button2)
     }
 
-    @objc func toWeather() {
-        guard let coordinator = coordinator as? MainC else { return }
-        coordinator.toWeather()
+    @objc func button1Tap() {
+        viewModel.button1Tapped()
     }
 
-    @objc func toTable() {
-        guard let coordinator = coordinator as? MainC else { return }
-        coordinator.toTable()
+    @objc func button2Tap() {
+        viewModel.button2Tapped()
     }
+
 }
