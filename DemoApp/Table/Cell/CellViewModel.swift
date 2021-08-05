@@ -23,10 +23,10 @@ class DetailVM {
 
     init(userID: Int) {
         self.user = DetailUserVM(nil)
-        fetchUsers(userID: userID)
+        fetchUser(userID: userID)
     }
 
-    func fetchUsers(userID: Int) {
+    private func fetchUser(userID: Int) {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/users/\(userID)") else { return }
         Networking().fetch(url) { (users, error) in
             if let error = error {

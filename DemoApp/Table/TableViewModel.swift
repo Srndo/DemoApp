@@ -9,7 +9,7 @@ import Foundation
 
 class CellVM {
     let title = "Table"
-    var content: [CellViewModel] = []
+    var users: [CellViewModel] = []
 
     func fetchUsers(completition: @escaping () -> Void) {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/users/") else { return }
@@ -20,7 +20,7 @@ class CellVM {
             }
             guard let users = users else { return }
             for user in users {
-                self.content.append(CellViewModel(by: user))
+                self.users.append(CellViewModel(by: user))
             }
             completition()
         }

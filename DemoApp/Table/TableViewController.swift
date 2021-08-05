@@ -15,6 +15,8 @@ class TableVC: UITableViewController, Coordinating {
         super.viewDidLoad()
         title = viewModel.title
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.delegate = self
+        tableView.dataSource = self
         view.backgroundColor = .systemBackground
         viewModel.fetchUsers {
             DispatchQueue.main.async {
@@ -31,17 +33,17 @@ class TableVC: UITableViewController, Coordinating {
 
 extension TableVC {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.content.count
+        viewModel.users.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "\(viewModel.content[indexPath.row].id) - \(viewModel.content[indexPath.row].name)"
+        cell.textLabel?.text = "\(viewModel.users[indexPath.row].id) - \(viewModel.users[indexPath.row].name)"
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let coordinator = coordinator as? TableC else { return }
-        coordinator.toDetail(viewModel.content[indexPath.row].id)
+        coordinator.toDetail(viewModel.users[indexPath.row].id)
     }
 }
