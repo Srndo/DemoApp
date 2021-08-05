@@ -25,10 +25,11 @@
 		F4CA776D26BAA4F8008860CD /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA776C26BAA4F8008860CD /* WeatherViewModel.swift */; };
 		F4CA777026BAA7E3008860CD /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA776F26BAA7E3008860CD /* Networking.swift */; };
 		F4CA777326BAA94E008860CD /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777226BAA94E008860CD /* MyButton.swift */; };
-		F4CA777526BBBE16008860CD /* CellCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777426BBBE16008860CD /* CellCoordinator.swift */; };
-		F4CA777726BBBE21008860CD /* CellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777626BBBE21008860CD /* CellViewController.swift */; };
-		F4CA777926BBBE31008860CD /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777826BBBE31008860CD /* CellViewModel.swift */; };
+		F4CA777526BBBE16008860CD /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777426BBBE16008860CD /* DetailCoordinator.swift */; };
+		F4CA777726BBBE21008860CD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777626BBBE21008860CD /* DetailViewController.swift */; };
+		F4CA777926BBBE31008860CD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777826BBBE31008860CD /* DetailViewModel.swift */; };
 		F4CA777B26BC047A008860CD /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777A26BC047A008860CD /* Label.swift */; };
+		F4CA778026BC0FEC008860CD /* CellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777F26BC0FEC008860CD /* CellViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,10 +55,11 @@
 		F4CA776C26BAA4F8008860CD /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		F4CA776F26BAA7E3008860CD /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		F4CA777226BAA94E008860CD /* MyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
-		F4CA777426BBBE16008860CD /* CellCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCoordinator.swift; sourceTree = "<group>"; };
-		F4CA777626BBBE21008860CD /* CellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewController.swift; sourceTree = "<group>"; };
-		F4CA777826BBBE31008860CD /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
+		F4CA777426BBBE16008860CD /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
+		F4CA777626BBBE21008860CD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F4CA777826BBBE31008860CD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		F4CA777A26BC047A008860CD /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		F4CA777F26BC0FEC008860CD /* CellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,19 +144,20 @@
 				F4CA776126BAA479008860CD /* TableCoordinator.swift */,
 				F4CA776426BAA48F008860CD /* TableViewController.swift */,
 				F4CA776626BAA4B6008860CD /* TableViewModel.swift */,
-				F4CA775526BA9C99008860CD /* Cell */,
+				F4CA777F26BC0FEC008860CD /* CellViewController.swift */,
+				F4CA775526BA9C99008860CD /* Detail */,
 			);
 			path = Table;
 			sourceTree = "<group>";
 		};
-		F4CA775526BA9C99008860CD /* Cell */ = {
+		F4CA775526BA9C99008860CD /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				F4CA777426BBBE16008860CD /* CellCoordinator.swift */,
-				F4CA777626BBBE21008860CD /* CellViewController.swift */,
-				F4CA777826BBBE31008860CD /* CellViewModel.swift */,
+				F4CA777426BBBE16008860CD /* DetailCoordinator.swift */,
+				F4CA777626BBBE21008860CD /* DetailViewController.swift */,
+				F4CA777826BBBE31008860CD /* DetailViewModel.swift */,
 			);
-			path = Cell;
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		F4CA775626BA9CB6008860CD /* Weather */ = {
@@ -324,12 +327,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4CA778026BC0FEC008860CD /* CellViewController.swift in Sources */,
 				F4CA776726BAA4B6008860CD /* TableViewModel.swift in Sources */,
 				F4CA775926BA9D37008860CD /* Coordinator.swift in Sources */,
 				F4CA776026BA9E9B008860CD /* MainCoordinator.swift in Sources */,
 				F4CA774426BA9C76008860CD /* MainViewController.swift in Sources */,
-				F4CA777926BBBE31008860CD /* CellViewModel.swift in Sources */,
-				F4CA777526BBBE16008860CD /* CellCoordinator.swift in Sources */,
+				F4CA777926BBBE31008860CD /* DetailViewModel.swift in Sources */,
+				F4CA777526BBBE16008860CD /* DetailCoordinator.swift in Sources */,
 				F4CA774026BA9C76008860CD /* AppDelegate.swift in Sources */,
 				F4CA775C26BA9D8C008860CD /* User.swift in Sources */,
 				F4CA776D26BAA4F8008860CD /* WeatherViewModel.swift in Sources */,
@@ -340,7 +344,7 @@
 				F4CA777326BAA94E008860CD /* MyButton.swift in Sources */,
 				F4CA774226BA9C76008860CD /* SceneDelegate.swift in Sources */,
 				F4CA776526BAA48F008860CD /* TableViewController.swift in Sources */,
-				F4CA777726BBBE21008860CD /* CellViewController.swift in Sources */,
+				F4CA777726BBBE21008860CD /* DetailViewController.swift in Sources */,
 				F4CA775E26BA9DBB008860CD /* AppCoordinator.swift in Sources */,
 				F4CA777026BAA7E3008860CD /* Networking.swift in Sources */,
 			);

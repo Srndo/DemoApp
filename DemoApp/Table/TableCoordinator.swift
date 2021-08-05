@@ -18,7 +18,7 @@ class TableC: Coordinator {
 
     func start() {
         let vc = TableVC()
-        let viewModel = CellVM()
+        let viewModel = TableVM()
         vc.viewModel = viewModel
         vc.coordinator = self
         viewController?.pushViewController(vc, animated: true)

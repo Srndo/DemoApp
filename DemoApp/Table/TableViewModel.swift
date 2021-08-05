@@ -5,9 +5,9 @@
 //  Created by Simon Sestak on 04/08/2021.
 //
 
-import Foundation
+import UIKit
 
-class CellVM {
+class TableVM {
     let title = "Table"
     var users: [CellViewModel] = []
 
@@ -27,15 +27,5 @@ class CellVM {
     }
 
     func filter(key: String, completition: @escaping (() -> [User])) {
-    }
-}
-
-struct CellViewModel {
-    var id: Int
-    var name: String
-
-    init(by user: User) {
-        self.id = user.id
-        self.name = user.name
     }
 }
