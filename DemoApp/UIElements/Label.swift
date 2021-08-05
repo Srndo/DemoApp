@@ -1,14 +1,13 @@
 //
-//  Button.swift
+//  Label.swift
 //  DemoApp
 //
-//  Created by Simon Sestak on 04/08/2021.
+//  Created by Simon Sestak on 05/08/2021.
 //
 
 import UIKit
 
-class Button: UIButton {
-
+class MyLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -19,16 +18,16 @@ class Button: UIButton {
 
     init(title: String) {
         super.init(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
-        backgroundColor = .systemBlue
-        setTitle(title, for: .normal)
-        setTitleColor(.white, for: .normal)
-        titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        layer.cornerRadius = 8
-        layer.masksToBounds = true
+        fill(title)
     }
 
     func center(to: CGPoint, _ offsetX: CGFloat = 0.0, _ offsetY: CGFloat = 0.0) {
         self.center.x = to.x + offsetX
         self.center.y = to.y + offsetY
+    }
+
+    func fill(_ text: String) {
+        self.text = text
+        sizeToFit()
     }
 }

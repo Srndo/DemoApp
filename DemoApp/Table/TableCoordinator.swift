@@ -24,9 +24,10 @@ class TableC: Coordinator {
         viewController?.pushViewController(vc, animated: true)
     }
 
-    func toDetail(_ UserID: Int) {
+    func toDetail(_ userID: Int) {
         let controller = DetailC(viewController)
         childCoordinators.append(controller)
+        controller.userID = userID
         controller.parentCoordinator = self
         controller.start()
     }

@@ -10,15 +10,15 @@ import UIKit
 class MainVC: UIViewController, Coordinating {
     var coordinator: Coordinator?
 
-    lazy var button: Button = {
-        let button = Button(title: "To Weather")
+    lazy var button: MyButton = {
+        let button = MyButton(title: "To Weather")
         button.center(to: view.center, 0, -30)
         button.addTarget(self, action: #selector(toWeather), for: .touchUpInside)
         return button
     }()
 
-    lazy var button2: Button = {
-       let button = Button(title: "To Table")
+    lazy var button2: MyButton = {
+       let button = MyButton(title: "To Table")
         button.center(to: view.center, 0, 30)
         button.addTarget(self, action: #selector(toTable), for: .touchUpInside)
         return button

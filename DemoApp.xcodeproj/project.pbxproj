@@ -24,10 +24,11 @@
 		F4CA776B26BAA4EF008860CD /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA776A26BAA4EF008860CD /* WeatherViewController.swift */; };
 		F4CA776D26BAA4F8008860CD /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA776C26BAA4F8008860CD /* WeatherViewModel.swift */; };
 		F4CA777026BAA7E3008860CD /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA776F26BAA7E3008860CD /* Networking.swift */; };
-		F4CA777326BAA94E008860CD /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777226BAA94E008860CD /* Button.swift */; };
+		F4CA777326BAA94E008860CD /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777226BAA94E008860CD /* MyButton.swift */; };
 		F4CA777526BBBE16008860CD /* CellCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777426BBBE16008860CD /* CellCoordinator.swift */; };
 		F4CA777726BBBE21008860CD /* CellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777626BBBE21008860CD /* CellViewController.swift */; };
 		F4CA777926BBBE31008860CD /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777826BBBE31008860CD /* CellViewModel.swift */; };
+		F4CA777B26BC047A008860CD /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777A26BC047A008860CD /* Label.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,10 +53,11 @@
 		F4CA776A26BAA4EF008860CD /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		F4CA776C26BAA4F8008860CD /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		F4CA776F26BAA7E3008860CD /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		F4CA777226BAA94E008860CD /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		F4CA777226BAA94E008860CD /* MyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
 		F4CA777426BBBE16008860CD /* CellCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCoordinator.swift; sourceTree = "<group>"; };
 		F4CA777626BBBE21008860CD /* CellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewController.swift; sourceTree = "<group>"; };
 		F4CA777826BBBE31008860CD /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
+		F4CA777A26BC047A008860CD /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,7 +186,8 @@
 		F4CA777126BAA928008860CD /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
-				F4CA777226BAA94E008860CD /* Button.swift */,
+				F4CA777226BAA94E008860CD /* MyButton.swift */,
+				F4CA777A26BC047A008860CD /* Label.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -330,10 +333,11 @@
 				F4CA774026BA9C76008860CD /* AppDelegate.swift in Sources */,
 				F4CA775C26BA9D8C008860CD /* User.swift in Sources */,
 				F4CA776D26BAA4F8008860CD /* WeatherViewModel.swift in Sources */,
+				F4CA777B26BC047A008860CD /* Label.swift in Sources */,
 				F4CA776B26BAA4EF008860CD /* WeatherViewController.swift in Sources */,
 				F4CA776926BAA4DB008860CD /* WeatherCoordinator.swift in Sources */,
 				F4CA776226BAA479008860CD /* TableCoordinator.swift in Sources */,
-				F4CA777326BAA94E008860CD /* Button.swift in Sources */,
+				F4CA777326BAA94E008860CD /* MyButton.swift in Sources */,
 				F4CA774226BA9C76008860CD /* SceneDelegate.swift in Sources */,
 				F4CA776526BAA48F008860CD /* TableViewController.swift in Sources */,
 				F4CA777726BBBE21008860CD /* CellViewController.swift in Sources */,

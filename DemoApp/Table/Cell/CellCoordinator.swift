@@ -11,16 +11,16 @@ class DetailC: Coordinator {
     var viewController: UINavigationController?
     var childCoordinators: [Coordinator] = []
     var parentCoordinator: Coordinator?
+    var userID: Int = -1
 
     required init(_ viewController: UINavigationController?) {
         self.viewController = viewController
     }
 
     func start() {
-        let vc = DetailVC()
-        let vm = DetailVM()
+        let vm = DetailVM(userID: userID)
+        let vc = DetailVC(vm)
         vc.coordinator = self
-        vc.viewModel = vm
         viewController?.pushViewController(vc, animated: true)
     }
 }

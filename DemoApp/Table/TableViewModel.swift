@@ -9,12 +9,11 @@ import Foundation
 
 class CellVM {
     let title = "Table"
-    let service = Networking()
     var content: [CellViewModel] = []
 
     func fetchUsers(completition: @escaping () -> Void) {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/users/") else { return }
-        service.execute(url) { (users, error) in
+        Networking().fetch(url) { (users, error) in
             if let error = error {
                 print(error.localizedDescription)
                 return
