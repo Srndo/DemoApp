@@ -7,9 +7,9 @@
 
 import UIKit
 
-class CellVC: UIViewController, Coordinating {
+class DetailVC: UIViewController, Coordinating {
     var coordinator: Coordinator?
-    var viewModel: CellVM!
+    var viewModel: DetailVM!
 
     override func viewDidLoad() {
         view.backgroundColor = .systemBackground
@@ -18,7 +18,7 @@ class CellVC: UIViewController, Coordinating {
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        guard let coordinator = coordinator as? CellC else { return }
+        guard let coordinator = coordinator as? DetailC else { return }
         coordinator.didFinish()
     }
 }

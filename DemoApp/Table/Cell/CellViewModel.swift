@@ -7,6 +7,6 @@
 
 import UIKit
 
-class CellVM {
+class DetailVM {
     var title = "Detail"
 }

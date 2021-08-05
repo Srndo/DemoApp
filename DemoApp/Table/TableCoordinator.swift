@@ -18,14 +18,14 @@ class TableC: Coordinator {
 
     func start() {
         let vc = TableVC()
-        let viewModel = TableVM()
+        let viewModel = CellVM()
         vc.viewModel = viewModel
         vc.coordinator = self
         viewController?.pushViewController(vc, animated: true)
     }
 
-    func toDetail() {
-        let controller = CellC(viewController)
+    func toDetail(_ UserID: Int) {
+        let controller = DetailC(viewController)
         childCoordinators.append(controller)
         controller.parentCoordinator = self
         controller.start()

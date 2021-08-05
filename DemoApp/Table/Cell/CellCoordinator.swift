@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CellC: Coordinator {
+class DetailC: Coordinator {
     var viewController: UINavigationController?
     var childCoordinators: [Coordinator] = []
     var parentCoordinator: Coordinator?
@@ -17,8 +17,8 @@ class CellC: Coordinator {
     }
 
     func start() {
-        let vc = CellVC()
-        let vm = CellVM()
+        let vc = DetailVC()
+        let vm = DetailVM()
         vc.coordinator = self
         vc.viewModel = vm
         viewController?.pushViewController(vc, animated: true)
