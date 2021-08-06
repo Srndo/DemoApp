@@ -26,18 +26,18 @@ class DetailViewModel {
     init(coordinator: DetailCoordinator, userID: Int) {
         self.coordinator = coordinator
         self.user = DetailUserModel(nil)
-        fetchUser(userID: userID)
+        getData(userID: userID)
     }
 
-    private func fetchUser(userID: Int) {
+    private func getData(userID: Int) {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/users/\(userID)") else { return }
-        Networking().fetch(url) { (users, error) in
+        Networking().fetchForDetailData(url) { (user, error) in
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
-            guard let user = users?.first else { return }
-            self.user = DetailUserModel(user)
+            guard let user = user else { return }
+            self.user = user
         }
     }
 
@@ -46,16 +46,17 @@ class DetailViewModel {
     }
 }
 
-struct DetailUserModel {
+struct DetailUserModel: Decodable {
     let name: String
     let email: String
     let phone: String
-    let address: String
+    let address: Address
 
     init(_ user: User?) {
-        self.name = user?.name ?? ""
+        self.name = user?.name ?? "asd"
         self.email = user?.email ?? ""
         self.phone = user?.phone ?? ""
-        self.address = "\(user?.address.city ?? "") \(user?.address.zipcode ?? "")"
+        let geo = GeoLocation(lat: "", lng: "")
+        self.address = Address(street: "", suite: "", city: "", zipcode: "", geo: geo)
     }
 }

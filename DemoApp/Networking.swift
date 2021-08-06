@@ -17,9 +17,10 @@ import Alamofire
  */
 
 class Networking {
-    typealias WebserviceResponse = ([User]?, Error?) -> Void
+    typealias WebserviceTableDataResponse = ([CellModel]?, Error?) -> Void
+    typealias WebserviceDetailDataResponse = (DetailUserModel?, Error?) -> Void
 
-    func fetch(_ url: URL, completition: @escaping WebserviceResponse) {
+    func fetchForTableData(_ url: URL, completition: @escaping WebserviceTableDataResponse) {
         Alamofire.request(url).validate().responseJSON { response in
             if let error = response.error {
                 completition(nil, error)
@@ -30,16 +31,32 @@ class Networking {
                 completition(nil, NSError(domain: "Coordinator", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data in response."]))
                 return
             }
-            if let user = try? JSONDecoder().decode(User.self, from: data) {
-                completition([user], nil)
-            } else if let users = try? JSONDecoder().decode([User].self, from: data) {
-                completition(users, nil)
-            } else {
-                completition(nil,
-                             NSError(domain: "Coordinator",
-                                     code: 0,
-                                     userInfo: [NSLocalizedDescriptionKey: "Cannot decode data from response."]))
+            guard let users = try? JSONDecoder().decode([CellModel].self, from: data) else {
+                // swiftlint:disable:next line_length
+                completition(nil, NSError(domain: "Coordinator", code: 0, userInfo: [NSLocalizedDescriptionKey: "Cannot decode data from response."]))
+                return
             }
+            completition(users, nil)
+        }
+    }
+
+    func fetchForDetailData(_ url: URL, completition: @escaping WebserviceDetailDataResponse) {
+        Alamofire.request(url).validate().responseJSON { response in
+            if let error = response.error {
+                completition(nil, error)
+                return
+            }
+            guard let data = response.data else {
+                // swiftlint:disable:next line_length
+                completition(nil, NSError(domain: "Coordinator", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data in response."]))
+                return
+            }
+            guard let user = try? JSONDecoder().decode(DetailUserModel.self, from: data) else {
+                // swiftlint:disable:next line_length
+                completition(nil, NSError(domain: "Coordinator", code: 0, userInfo: [NSLocalizedDescriptionKey: "Cannot decode data from response."]))
+                return
+            }
+            completition(user, nil)
         }
     }
 }

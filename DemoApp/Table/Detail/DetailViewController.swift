@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         viewModel.userDidChange = { [weak self] (user: DetailUserModel) in
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self?.fillLabels(user)
             }
         }
@@ -45,12 +45,13 @@ class DetailViewController: UIViewController {
         view.addSubview(emailLabel)
         view.addSubview(phoneLabel)
         view.addSubview(addressLabel)
+        fillLabels(viewModel.user)
     }
 
     private func fillLabels(_ user: DetailUserModel) {
         nameLabel.fill(user.name)
         nameLabel.center(to: view.center, 0, -80)
-        addressLabel.fill(user.address)
+        addressLabel.fill(user.address.city)
         addressLabel.center(to: view.center, 0, -40)
         phoneLabel.fill(user.phone)
         phoneLabel.center(to: view.center)

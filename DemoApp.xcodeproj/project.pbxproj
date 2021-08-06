@@ -31,6 +31,7 @@
 		F4CA777B26BC047A008860CD /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777A26BC047A008860CD /* Label.swift */; };
 		F4CA778026BC0FEC008860CD /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777F26BC0FEC008860CD /* CustomCell.swift */; };
 		F4CA778726BD28BA008860CD /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA778626BD28BA008860CD /* UIWindowExtension.swift */; };
+		F4CA778926BD3279008860CD /* CustomCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA778826BD3279008860CD /* CustomCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		F4CA777A26BC047A008860CD /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		F4CA777F26BC0FEC008860CD /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		F4CA778626BD28BA008860CD /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
+		F4CA778826BD3279008860CD /* CustomCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				F4CA777F26BC0FEC008860CD /* CustomCell.swift */,
+				F4CA778826BD3279008860CD /* CustomCellModel.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				F4CA776226BAA479008860CD /* TableCoordinator.swift in Sources */,
 				31805F8626BC318D00E0115D /* MainViewModel.swift in Sources */,
 				F4CA777326BAA94E008860CD /* MyButton.swift in Sources */,
+				F4CA778926BD3279008860CD /* CustomCellModel.swift in Sources */,
 				F4CA776526BAA48F008860CD /* TableViewController.swift in Sources */,
 				F4CA777726BBBE21008860CD /* DetailViewController.swift in Sources */,
 				F4CA775E26BA9DBB008860CD /* AppCoordinator.swift in Sources */,

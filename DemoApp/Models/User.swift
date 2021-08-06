@@ -16,17 +16,6 @@ struct User: Codable {
     let company: Company
 }
 
-extension User: CustomCellModel {
-    var image: UIImage {
-        UIImage(named: "placeholder")!
-    }
-
-    var text: String {
-        return "\(self.id) - \(self.name)"
-    }
-
-}
-
 // MARK: - Address
 
 struct Address: Codable {

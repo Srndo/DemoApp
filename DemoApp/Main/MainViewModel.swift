@@ -11,7 +11,7 @@ class MainViewModel {
 
     var coordinator: MainCoordinator!
     var viewTitle: String = "Main"
-    
+
     var titleButton1: String = "To Weather"
     var titleButton2: String = "To Table"
 

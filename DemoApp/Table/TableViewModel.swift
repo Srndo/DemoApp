@@ -18,16 +18,16 @@ class TableViewModel {
     let title = "Table"
     var users: [CellModel] = []
 
-        func fetchUsers(completition: @escaping () -> Void) {
+    func getData(completition: @escaping () -> Void) {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/users/") else { return }
-        Networking().fetch(url) { (users, error) in
+        Networking().fetchForTableData(url) { (users, error) in
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
             guard let users = users else { return }
             for user in users {
-                self.users.append(CellModel(by: user))
+                self.users.append(user)
             }
             completition()
         }

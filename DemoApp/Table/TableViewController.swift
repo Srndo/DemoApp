@@ -25,7 +25,7 @@ class TableViewController: UITableViewController {
         configureTable()
         title = viewModel.title
         view.backgroundColor = .systemBackground
-        viewModel.fetchUsers {
+        viewModel.getData {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
