@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct CellModel: Codable {
+struct CellUserModel: Codable {
     var id: Int                                         // swiftlint:disable:this identifier_name
     var image: UIImage = UIImage(named: "placeholder")!
     var name: String

@@ -58,6 +58,6 @@ extension TableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.disSelect(at: indexPath)
+        viewModel.didSelect(at: indexPath)
     }
 }

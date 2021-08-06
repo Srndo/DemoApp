@@ -16,7 +16,7 @@ class TableViewModel {
     }
 
     let title = "Table"
-    var users: [CellModel] = []
+    var users: [CellUserModel] = []
 
     func getData(completition: @escaping () -> Void) {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/users/") else { return }
@@ -36,9 +36,9 @@ class TableViewModel {
     func filter(key: String, completition: @escaping (() -> [User])) {
     }
 
-    func disSelect(at indexPath: IndexPath) {
-        guard let userID = users[safe: indexPath.row]?.id else { return }
-        coordinator.toDetail(id: userID)
+    func didSelect(at indexPath: IndexPath) {
+        guard let user = users[safe: indexPath.row] else { return }
+        coordinator.toDetail(user: user)
     }
 }
 

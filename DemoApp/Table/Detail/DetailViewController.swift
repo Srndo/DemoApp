@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         viewModel.userDidChange = { [weak self] (user: DetailUserModel) in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {          // fake gap between geting data (2 seconds)
                 self?.fillLabels(user)
             }
         }

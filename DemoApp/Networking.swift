@@ -17,7 +17,7 @@ import Alamofire
  */
 
 class Networking {
-    typealias WebserviceTableDataResponse = ([CellModel]?, Error?) -> Void
+    typealias WebserviceTableDataResponse = ([CellUserModel]?, Error?) -> Void
     typealias WebserviceDetailDataResponse = (DetailUserModel?, Error?) -> Void
 
     func fetchForTableData(_ url: URL, completition: @escaping WebserviceTableDataResponse) {
@@ -31,7 +31,7 @@ class Networking {
                 completition(nil, NSError(domain: "Coordinator", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data in response."]))
                 return
             }
-            guard let users = try? JSONDecoder().decode([CellModel].self, from: data) else {
+            guard let users = try? JSONDecoder().decode([CellUserModel].self, from: data) else {
                 // swiftlint:disable:next line_length
                 completition(nil, NSError(domain: "Coordinator", code: 0, userInfo: [NSLocalizedDescriptionKey: "Cannot decode data from response."]))
                 return

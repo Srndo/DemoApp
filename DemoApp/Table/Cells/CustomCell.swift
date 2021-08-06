@@ -26,7 +26,7 @@ class CustomCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func set(cell: CellModel) {
+    func set(cell: CellUserModel) {
         self.image.image = cell.image
         self.label.text = "\(cell.id) - \(cell.name)"
     }

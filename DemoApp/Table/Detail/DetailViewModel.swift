@@ -23,10 +23,10 @@ class DetailViewModel {
         }
     }
 
-    init(coordinator: DetailCoordinator, userID: Int) {
+    init(coordinator: DetailCoordinator, user: CellUserModel) {
         self.coordinator = coordinator
-        self.user = DetailUserModel(nil)
-        getData(userID: userID)
+        self.user = DetailUserModel(user)
+        getData(userID: user.id)
     }
 
     private func getData(userID: Int) {
@@ -56,6 +56,14 @@ struct DetailUserModel: Decodable {
         self.name = user?.name ?? "asd"
         self.email = user?.email ?? ""
         self.phone = user?.phone ?? ""
+        let geo = GeoLocation(lat: "", lng: "")
+        self.address = Address(street: "", suite: "", city: "", zipcode: "", geo: geo)
+    }
+
+    init(_ cellUser: CellUserModel) {
+        self.name = cellUser.name
+        self.email = ""
+        self.phone = ""
         let geo = GeoLocation(lat: "", lng: "")
         self.address = Address(street: "", suite: "", city: "", zipcode: "", geo: geo)
     }

@@ -12,14 +12,15 @@ class DetailCoordinator: Coordinator {
     var viewController: DetailViewController?
     var childCoordinators: [Coordinator] = []
     var parentCoordinator: Coordinator?
-    var userID: Int = -1
+    var user: CellUserModel
 
-    init(window: UIWindow?) {
+    init(window: UIWindow?, cellUser: CellUserModel) {
         self.window = window
+        self.user = cellUser
     }
 
     func start() {
-        let viewModel = DetailViewModel(coordinator: self, userID: userID)
+        let viewModel = DetailViewModel(coordinator: self, user: user)
         viewController = DetailViewController(viewModel)
         if let viewController = viewController {
             window.rootUINavigationController()?.pushViewController(viewController, animated: true)

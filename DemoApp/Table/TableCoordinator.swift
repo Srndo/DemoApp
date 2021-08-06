@@ -25,10 +25,9 @@ class TableCoordinator: Coordinator {
         }
     }
 
-    func toDetail(id userID: Int) {
-        let controller = DetailCoordinator(window: window)
+    func toDetail(user: CellUserModel) {
+        let controller = DetailCoordinator(window: window, cellUser: user)
         childCoordinators.append(controller)
-        controller.userID = userID
         controller.parentCoordinator = self
         controller.start()
     }
