@@ -7,6 +7,15 @@
 
 import Alamofire
 
+/*
+                    TODO
+ - make one more separate fetch for filling: ID, Name, etc
+ - make another fetch to fill remaing data of structure User
+
+ - use storyboarding with Coordinators in weather
+ - make extension for reype rootviewController as UINavigationViewController
+ */
+
 class Networking {
     typealias WebserviceResponse = ([User]?, Error?) -> Void
 
@@ -17,6 +26,7 @@ class Networking {
                 return
             }
             guard let data = response.data else {
+                // swiftlint:disable:next line_length
                 completition(nil, NSError(domain: "Coordinator", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data in response."]))
                 return
             }

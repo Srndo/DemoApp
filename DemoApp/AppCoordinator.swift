@@ -26,7 +26,6 @@ class AppCoordinator: Coordinator {
         let mainCoordinator = MainCoordinator(window: window)
         childCoordinators.append(mainCoordinator)
         mainCoordinator.start()
-        print((window?.rootViewController as? UINavigationController)?.viewControllers)
     }
 
 }

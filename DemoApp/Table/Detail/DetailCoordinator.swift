@@ -19,8 +19,8 @@ class DetailCoordinator: Coordinator {
     }
 
     func start() {
-        let vm = DetailViewModel(coordinator: self, userID: userID)
-        let vc = DetailViewController(vm)
+        let vm = DetailViewModel(coordinator: self, userID: userID) // swiftlint:disable:this identifier_name
+        let vc = DetailViewController(vm)                           // swiftlint:disable:this identifier_name
         vc.coordinator = self
         (window?.rootViewController as? UINavigationController)?.pushViewController(vc, animated: true)
     }

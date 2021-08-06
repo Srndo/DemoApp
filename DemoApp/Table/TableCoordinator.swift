@@ -19,7 +19,7 @@ class TableCoordinator: Coordinator {
 
     func start() {
         let viewModel = TableViewModel(coordinator: self)
-        let vc = TableViewController(viewModel: viewModel)
+        let vc = TableViewController(viewModel: viewModel)      // swiftlint:disable:this identifier_name
         (window?.rootViewController as? UINavigationController)?.pushViewController(vc, animated: true)
     }
 

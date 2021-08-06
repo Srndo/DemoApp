@@ -67,7 +67,7 @@ protocol CustomCellModel {
 }
 
 struct CellModel {
-    var id: Int
+    var id: Int                                         // swiftlint:disable:this identifier_name
     var image: UIImage = UIImage(named: "placeholder")!
     var name: String
 

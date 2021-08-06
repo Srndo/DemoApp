@@ -21,6 +21,7 @@ class MyLabel: UILabel {
         fill(title)
     }
 
+    // swiftlint:disable:next identifier_name
     func center(to: CGPoint, _ offsetX: CGFloat = 0.0, _ offsetY: CGFloat = 0.0) {
         self.center.x = to.x + offsetX
         self.center.y = to.y + offsetY

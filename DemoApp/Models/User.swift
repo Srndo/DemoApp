@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct User: Codable {
-    let id: Int
+    let id: Int                         // swiftlint:disable:this identifier_name
     let name, username, email: String
     let address: Address
     let phone, website: String
@@ -43,7 +43,7 @@ struct GeoLocation: Codable {
 // MARK: - Company
 
 struct Company: Codable {
-    let name, catchPhrase, bs: String
+    let name, catchPhrase, bs: String           // swiftlint:disable:this identifier_name
 }
 
 extension User: Equatable {
