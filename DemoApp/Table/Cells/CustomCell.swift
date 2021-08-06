@@ -31,11 +31,6 @@ class CustomCell: UITableViewCell {
         self.label.text = "\(cell.id) - \(cell.name)"
     }
 
-    func set(customCellModel: CustomCellModel) {
-        self.image.image = customCellModel.image
-        self.label.text = customCellModel.text
-    }
-
     private func configureImage() {
         image.layer.cornerRadius = 10
         image.clipsToBounds = true
@@ -58,21 +53,5 @@ class CustomCell: UITableViewCell {
         label.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 20).isActive = true
         label.heightAnchor.constraint(equalToConstant: 80).isActive = true
         label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
-    }
-}
-
-protocol CustomCellModel {
-    var image: UIImage { get }
-    var text: String { get }
-}
-
-struct CellModel {
-    var id: Int                                         // swiftlint:disable:this identifier_name
-    var image: UIImage = UIImage(named: "placeholder")!
-    var name: String
-
-    init(by user: User) {
-        self.id = user.id
-        self.name = user.name
     }
 }
