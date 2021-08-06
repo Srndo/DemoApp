@@ -40,6 +40,10 @@ class DetailViewModel {
             self.user = DetailUserModel(user)
         }
     }
+
+    func didFinish() {
+        coordinator.didFinish()
+    }
 }
 
 struct DetailUserModel {
