@@ -18,12 +18,10 @@ class MainCoordinator: Coordinator {
     }
 
     func start() {
-
         let viewModel = MainViewModel(coordinator: self)
         viewController = MainViewController(viewModel: viewModel)
         if let viewController = viewController {
-            let nvc = (window?.rootViewController as? UINavigationController)
-            nvc?.setViewControllers([viewController], animated: false)
+            window.rootUINavigationController()?.pushViewController(viewController, animated: false)
         }
     }
 

@@ -8,7 +8,6 @@
 import UIKit
 
 class WeatherCoordinator: Coordinator {
-
     var window: UIWindow?
     var viewController: WeatherViewController?
     var childCoordinators: [Coordinator] = []
@@ -22,7 +21,7 @@ class WeatherCoordinator: Coordinator {
         let viewModel = WeatherViewModel()
         viewController = WeatherViewController(viewModel: viewModel)
         if  let viewController = viewController {
-            (window?.rootViewController as? UINavigationController)?.pushViewController(viewController, animated: true)
+            window.rootUINavigationController()?.pushViewController(viewController, animated: false)
         }
     }
 }

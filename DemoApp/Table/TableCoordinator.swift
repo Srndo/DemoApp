@@ -19,8 +19,10 @@ class TableCoordinator: Coordinator {
 
     func start() {
         let viewModel = TableViewModel(coordinator: self)
-        let vc = TableViewController(viewModel: viewModel)      // swiftlint:disable:this identifier_name
-        (window?.rootViewController as? UINavigationController)?.pushViewController(vc, animated: true)
+        viewController = TableViewController(viewModel: viewModel)
+        if let viewController = viewController {
+            window.rootUINavigationController()?.pushViewController(viewController, animated: false)
+        }
     }
 
     func toDetail(id userID: Int) {

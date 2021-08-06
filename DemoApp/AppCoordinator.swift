@@ -8,7 +8,6 @@
 import UIKit
 
 class AppCoordinator: Coordinator {
-
     var window: UIWindow?
     var childCoordinators: [Coordinator] = []
     var parentCoordinator: Coordinator?
