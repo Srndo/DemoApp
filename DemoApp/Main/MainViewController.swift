@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = "Home"
+        title = viewModel.viewTitle
         view.addSubview(button)
         view.addSubview(button2)
     }

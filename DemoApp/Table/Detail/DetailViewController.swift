@@ -8,7 +8,6 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    var coordinator: Coordinator?
     let viewModel: DetailViewModel!
     let nameLabel = MyLabel()
     let emailLabel = MyLabel()
@@ -38,8 +37,7 @@ class DetailViewController: UIViewController {
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        guard let coordinator = coordinator as? DetailCoordinator else { return }
-        coordinator.didFinish()
+        viewModel.didFinish()
     }
 
     private func createLabels() {
