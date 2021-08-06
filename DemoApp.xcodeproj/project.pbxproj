@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0C6CC556005145560D50D3D9 /* Pods_DemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C550CC1E04CC5064E71D109 /* Pods_DemoApp.framework */; };
+		31805F8626BC318D00E0115D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31805F8526BC318D00E0115D /* MainViewModel.swift */; };
 		F4CA774026BA9C76008860CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA773F26BA9C76008860CD /* AppDelegate.swift */; };
-		F4CA774226BA9C76008860CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA774126BA9C76008860CD /* SceneDelegate.swift */; };
 		F4CA774426BA9C76008860CD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA774326BA9C76008860CD /* MainViewController.swift */; };
 		F4CA774926BA9C78008860CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4CA774826BA9C78008860CD /* Assets.xcassets */; };
 		F4CA774C26BA9C78008860CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4CA774A26BA9C78008860CD /* LaunchScreen.storyboard */; };
@@ -29,16 +29,16 @@
 		F4CA777726BBBE21008860CD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777626BBBE21008860CD /* DetailViewController.swift */; };
 		F4CA777926BBBE31008860CD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777826BBBE31008860CD /* DetailViewModel.swift */; };
 		F4CA777B26BC047A008860CD /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777A26BC047A008860CD /* Label.swift */; };
-		F4CA778026BC0FEC008860CD /* CellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777F26BC0FEC008860CD /* CellViewController.swift */; };
+		F4CA778026BC0FEC008860CD /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777F26BC0FEC008860CD /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		31805F8526BC318D00E0115D /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		63A7BD26EF9DECD099597A19 /* Pods-DemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.debug.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		6AEB697BF7F194B13D4F4398 /* Pods-DemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.release.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		8C550CC1E04CC5064E71D109 /* Pods_DemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4CA773C26BA9C76008860CD /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4CA773F26BA9C76008860CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F4CA774126BA9C76008860CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F4CA774326BA9C76008860CD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F4CA774826BA9C78008860CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4CA774B26BA9C78008860CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		F4CA777626BBBE21008860CD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F4CA777826BBBE31008860CD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		F4CA777A26BC047A008860CD /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
-		F4CA777F26BC0FEC008860CD /* CellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewController.swift; sourceTree = "<group>"; };
+		F4CA777F26BC0FEC008860CD /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +81,14 @@
 				6AEB697BF7F194B13D4F4398 /* Pods-DemoApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		31805F8726BC40EA00E0115D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F4CA777F26BC0FEC008860CD /* CustomCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		ED1AE2A57633FD817080E5EA /* Frameworks */ = {
@@ -113,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				F4CA773F26BA9C76008860CD /* AppDelegate.swift */,
-				F4CA774126BA9C76008860CD /* SceneDelegate.swift */,
 				F4CA775D26BA9DBB008860CD /* AppCoordinator.swift */,
 				F4CA775326BA9C7E008860CD /* Main */,
 				F4CA775626BA9CB6008860CD /* Weather */,
@@ -134,6 +141,7 @@
 			children = (
 				F4CA775F26BA9E9B008860CD /* MainCoordinator.swift */,
 				F4CA774326BA9C76008860CD /* MainViewController.swift */,
+				31805F8526BC318D00E0115D /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -144,7 +152,7 @@
 				F4CA776126BAA479008860CD /* TableCoordinator.swift */,
 				F4CA776426BAA48F008860CD /* TableViewController.swift */,
 				F4CA776626BAA4B6008860CD /* TableViewModel.swift */,
-				F4CA777F26BC0FEC008860CD /* CellViewController.swift */,
+				31805F8726BC40EA00E0115D /* Cells */,
 				F4CA775526BA9C99008860CD /* Detail */,
 			);
 			path = Table;
@@ -327,7 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4CA778026BC0FEC008860CD /* CellViewController.swift in Sources */,
+				F4CA778026BC0FEC008860CD /* CustomCell.swift in Sources */,
 				F4CA776726BAA4B6008860CD /* TableViewModel.swift in Sources */,
 				F4CA775926BA9D37008860CD /* Coordinator.swift in Sources */,
 				F4CA776026BA9E9B008860CD /* MainCoordinator.swift in Sources */,
@@ -341,8 +349,8 @@
 				F4CA776B26BAA4EF008860CD /* WeatherViewController.swift in Sources */,
 				F4CA776926BAA4DB008860CD /* WeatherCoordinator.swift in Sources */,
 				F4CA776226BAA479008860CD /* TableCoordinator.swift in Sources */,
+				31805F8626BC318D00E0115D /* MainViewModel.swift in Sources */,
 				F4CA777326BAA94E008860CD /* MyButton.swift in Sources */,
-				F4CA774226BA9C76008860CD /* SceneDelegate.swift in Sources */,
 				F4CA776526BAA48F008860CD /* TableViewController.swift in Sources */,
 				F4CA777726BBBE21008860CD /* DetailViewController.swift in Sources */,
 				F4CA775E26BA9DBB008860CD /* AppCoordinator.swift in Sources */,
@@ -489,6 +497,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y7K69XGKB2;
 				INFOPLIST_FILE = DemoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,6 +518,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y7K69XGKB2;
 				INFOPLIST_FILE = DemoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

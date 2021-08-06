@@ -9,10 +9,9 @@ import UIKit
 import Foundation
 
 protocol Coordinator: AnyObject {
-    var viewController: UINavigationController? { get set }
+
     var childCoordinators: [Coordinator] { get set }
     var parentCoordinator: Coordinator? { get set }
-    init(_ viewController: UINavigationController?)
 
     func start()
 }
@@ -29,8 +28,4 @@ extension Coordinator {
     func didFinish() {
         parentCoordinator?.childDidFinish(self)
     }
-}
-
-protocol Coordinating {
-    var coordinator: Coordinator? { get set }
 }

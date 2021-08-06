@@ -7,20 +7,21 @@
 
 import UIKit
 
-class DetailC: Coordinator {
-    var viewController: UINavigationController?
+class DetailCoordinator: Coordinator {
+    var window: UIWindow?
+    var viewController: DetailViewController!
     var childCoordinators: [Coordinator] = []
     var parentCoordinator: Coordinator?
     var userID: Int = -1
 
-    required init(_ viewController: UINavigationController?) {
-        self.viewController = viewController
+    init(window: UIWindow?) {
+        self.window = window
     }
 
     func start() {
-        let vm = DetailVM(userID: userID)
-        let vc = DetailVC(vm)
+        let vm = DetailViewModel(coordinator: self, userID: userID)
+        let vc = DetailViewController(vm)
         vc.coordinator = self
-        viewController?.pushViewController(vc, animated: true)
+        (window?.rootViewController as? UINavigationController)?.pushViewController(vc, animated: true)
     }
 }

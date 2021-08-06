@@ -7,22 +7,25 @@
 
 import UIKit
 
-class DetailVM {
-    var userDidChange: ((DetailUserVM) -> Void)? {
+class DetailViewModel {
+
+    var coordinator: DetailCoordinator!
+    var userDidChange: ((DetailUserModel) -> Void)? {
         didSet {
             userDidChange?(user)
         }
     }
 
     let title = "Detail"
-    var user: DetailUserVM {
+    var user: DetailUserModel {
        didSet {
             userDidChange?(user)
         }
     }
 
-    init(userID: Int) {
-        self.user = DetailUserVM(nil)
+    init(coordinator: DetailCoordinator, userID: Int) {
+        self.coordinator = coordinator
+        self.user = DetailUserModel(nil)
         fetchUser(userID: userID)
     }
 
@@ -34,12 +37,12 @@ class DetailVM {
                 return
             }
             guard let user = users?.first else { return }
-            self.user = DetailUserVM(user)
+            self.user = DetailUserModel(user)
         }
     }
 }
 
-struct DetailUserVM {
+struct DetailUserModel {
     let name: String
     let email: String
     let phone: String

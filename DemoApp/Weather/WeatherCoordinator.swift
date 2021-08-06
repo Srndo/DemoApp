@@ -7,19 +7,22 @@
 
 import UIKit
 
-class WeatherC: Coordinator {
-    var viewController: UINavigationController?
+class WeatherCoordinator: Coordinator {
+
+    var window: UIWindow?
+    var viewController: WeatherViewController?
     var childCoordinators: [Coordinator] = []
     var parentCoordinator: Coordinator?
 
-    required init(_ viewController: UINavigationController?) {
-        self.viewController = viewController
+    init(window: UIWindow?) {
+        self.window = window
     }
 
     func start() {
-        let vc = WeatherVC()
-        vc.coordinator = self
-        vc.viewModel = WeatherVM()
-        viewController?.pushViewController(vc, animated: true)
+        let viewModel = WeatherViewModel()
+        viewController = WeatherViewController(viewModel: viewModel)
+        if  let viewController = viewController {
+            (window?.rootViewController as? UINavigationController)?.pushViewController(viewController, animated: true)
+        }
     }
 }

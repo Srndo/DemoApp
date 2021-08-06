@@ -7,9 +7,18 @@
 
 import UIKit
 
-class TableVC: UITableViewController, Coordinating {
-    var coordinator: Coordinator?
-    var viewModel: TableVM!
+class TableViewController: UITableViewController {
+
+    var viewModel: TableViewModel!
+
+    init(viewModel: TableViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +34,7 @@ class TableVC: UITableViewController, Coordinating {
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        coordinator?.didFinish()
+
     }
 
     private func configureTable() {
@@ -36,19 +45,19 @@ class TableVC: UITableViewController, Coordinating {
     }
 }
 
-extension TableVC {
+extension TableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.users.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // swiftlint:disable:next force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as! CustomCell
         cell.set(cell: viewModel.users[indexPath.row])
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let coordinator = coordinator as? TableC else { return }
-        coordinator.toDetail(viewModel.users[indexPath.row].id)
+        viewModel.disSelect(at: indexPath)
     }
 }

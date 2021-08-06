@@ -7,25 +7,24 @@
 
 import UIKit
 
-class TableC: Coordinator {
-    var viewController: UINavigationController?
+class TableCoordinator: Coordinator {
+    var window: UIWindow?
+    var viewController: TableViewController?
     var childCoordinators: [Coordinator] = []
     var parentCoordinator: Coordinator?
 
-    required init(_ viewController: UINavigationController?) {
-        self.viewController = viewController
+    init(window: UIWindow?) {
+        self.window = window
     }
 
     func start() {
-        let vc = TableVC()
-        let viewModel = TableVM()
-        vc.viewModel = viewModel
-        vc.coordinator = self
-        viewController?.pushViewController(vc, animated: true)
+        let viewModel = TableViewModel(coordinator: self)
+        let vc = TableViewController(viewModel: viewModel)
+        (window?.rootViewController as? UINavigationController)?.pushViewController(vc, animated: true)
     }
 
-    func toDetail(_ userID: Int) {
-        let controller = DetailC(viewController)
+    func toDetail(id userID: Int) {
+        let controller = DetailCoordinator(window: window)
         childCoordinators.append(controller)
         controller.userID = userID
         controller.parentCoordinator = self

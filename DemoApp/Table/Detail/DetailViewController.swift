@@ -7,18 +7,18 @@
 
 import UIKit
 
-class DetailVC: UIViewController, Coordinating {
+class DetailViewController: UIViewController {
     var coordinator: Coordinator?
-    let viewModel: DetailVM!
+    let viewModel: DetailViewModel!
     let nameLabel = MyLabel()
     let emailLabel = MyLabel()
     let phoneLabel = MyLabel()
     let addressLabel = MyLabel()
 
-    init(_ viewModel: DetailVM) {
+    init(_ viewModel: DetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        viewModel.userDidChange = { [weak self] (user: DetailUserVM) in
+        viewModel.userDidChange = { [weak self] (user: DetailUserModel) in
             DispatchQueue.main.async {
                 self?.fillLabels(user)
             }
@@ -38,7 +38,7 @@ class DetailVC: UIViewController, Coordinating {
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        guard let coordinator = coordinator as? DetailC else { return }
+        guard let coordinator = coordinator as? DetailCoordinator else { return }
         coordinator.didFinish()
     }
 
@@ -49,7 +49,7 @@ class DetailVC: UIViewController, Coordinating {
         view.addSubview(addressLabel)
     }
 
-    private func fillLabels(_ user: DetailUserVM) {
+    private func fillLabels(_ user: DetailUserModel) {
         nameLabel.fill(user.name)
         nameLabel.center(to: view.center, 0, -80)
         addressLabel.fill(user.address)
