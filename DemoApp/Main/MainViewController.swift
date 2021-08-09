@@ -7,47 +7,26 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, Storyboarded {
 
     var viewModel: MainViewModel!
 
-    init(viewModel: MainViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    lazy var button: MyButton = {
-        let button = MyButton(title: viewModel.titleButton1)
-        button.center(to: view.center, 0, -30)
-        button.addTarget(self, action: #selector(button1Tap), for: .touchUpInside)
-        return button
-    }()
-
-    lazy var button2: MyButton = {
-        let button = MyButton(title: viewModel.titleButton2)
-        button.center(to: view.center, 0, 30)
-        button.addTarget(self, action: #selector(button2Tap), for: .touchUpInside)
-        return button
-    }()
+    @IBOutlet weak var button1: UIButton?
+    @IBOutlet weak var button2: UIButton?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         title = viewModel.viewTitle
-        view.addSubview(button)
-        view.addSubview(button2)
+        button1?.setTitle(viewModel.titleButton1, for: .normal)
+        button2?.setTitle(viewModel.titleButton2, for: .normal)
     }
 
-    @objc func button1Tap() {
+    @IBAction func button1Tap(_ sender: Any) {
         viewModel.button1Tapped()
     }
 
-    @objc func button2Tap() {
+    @IBAction func button2Tap(_ sender: Any) {
         viewModel.button2Tapped()
     }
-
 }

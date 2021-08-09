@@ -19,7 +19,8 @@ class MainCoordinator: Coordinator {
 
     func start() {
         let viewModel = MainViewModel(coordinator: self)
-        viewController = MainViewController(viewModel: viewModel)
+        viewController = MainViewController.instantiate()
+        viewController?.viewModel = viewModel
         if let viewController = viewController {
             window.rootUINavigationController()?.pushViewController(viewController, animated: false)
         }
