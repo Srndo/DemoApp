@@ -12,13 +12,14 @@ class TableCoordinator: Coordinator {
     var viewController: TableViewController?
     var childCoordinators: [Coordinator] = []
     var parentCoordinator: Coordinator?
+    var viewModel: TableViewModel!
 
     init(window: UIWindow?) {
         self.window = window
     }
 
     func start() {
-        let viewModel = TableViewModel(coordinator: self)
+        viewModel = TableViewModel(coordinator: self)
         viewController = TableViewController(viewModel: viewModel)
         if let viewController = viewController {
             window.rootUINavigationController()?.pushViewController(viewController, animated: false)
@@ -30,5 +31,16 @@ class TableCoordinator: Coordinator {
         childCoordinators.append(controller)
         controller.parentCoordinator = self
         controller.start()
+    }
+
+    func showFilter() {
+        let controller = FilterCoordinator(window: window)
+        childCoordinators.append(controller)
+        controller.parentCoordinator = self
+        controller.start()
+    }
+
+    func filterDidFinish(key: String?) {
+        viewModel.setFilter(key: key)
     }
 }

@@ -30,6 +30,8 @@ class TableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+        // swiftlint:disable:next line_length
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: viewModel.navButtonType, target: self, action: #selector(navButtonTap))
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -43,17 +45,21 @@ class TableViewController: UITableViewController {
         tableView.dataSource = self
         tableView.rowHeight = 100
     }
+
+    @objc func navButtonTap() {
+        viewModel.navButtonTap()
+    }
 }
 
 extension TableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.users.count
+        viewModel.filtredUsers.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable:next force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as! CustomCell
-        cell.set(cell: viewModel.users[indexPath.row])
+        cell.set(cell: viewModel.filtredUsers[indexPath.row])
         return cell
     }
 

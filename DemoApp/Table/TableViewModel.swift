@@ -15,8 +15,10 @@ class TableViewModel {
         self.coordinator = coordinator
     }
 
+    let navButtonType: UIBarButtonItem.SystemItem = .search
     let title = "Table"
     var users: [CellUserModel] = []
+    var filtredUsers: [CellUserModel] = []
 
     func getData(completition: @escaping () -> Void) {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/users/") else { return }
@@ -29,15 +31,28 @@ class TableViewModel {
             for user in users {
                 self.users.append(user)
             }
+            self.filtredUsers = self.users
             completition()
         }
     }
 
-    func filter(key: String, completition: @escaping (() -> [User])) {
+    func navButtonTap() {
+        coordinator.showFilter()
+    }
+
+    func setFilter(key: String?) {
+        if let key = key {
+            self.filtredUsers = self.users.filter { $0.name.starts(with: key) }
+        } else {
+            self.filtredUsers = self.users
+        }
+        DispatchQueue.main.async {
+            self.coordinator.viewController?.tableView.reloadData()
+        }
     }
 
     func didSelect(at indexPath: IndexPath) {
-        guard let user = users[safe: indexPath.row] else { return }
+        guard let user = filtredUsers[safe: indexPath.row] else { return }
         coordinator.toDetail(user: user)
     }
 }
