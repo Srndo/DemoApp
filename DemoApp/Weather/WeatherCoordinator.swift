@@ -18,8 +18,8 @@ class WeatherCoordinator: Coordinator {
     }
 
     func start() {
-        let viewModel = WeatherViewModel()
-        viewController = WeatherViewController(viewModel: viewModel)
+        viewController = WeatherViewController.instantiate(name: "Weather")
+        viewController?.viewModel = WeatherViewModel(coordinator: self)
         if  let viewController = viewController {
             window.rootUINavigationController()?.pushViewController(viewController, animated: true)
         }

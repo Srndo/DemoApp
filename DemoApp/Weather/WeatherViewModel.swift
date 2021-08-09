@@ -5,11 +5,15 @@
 //  Created by Simon Sestak on 04/08/2021.
 //
 
-import Foundation
+import UIKit
 
 class WeatherViewModel {
 
-    func disAppear() {
-        print("disappear")
+    let coordinator: WeatherCoordinator
+
+    init(coordinator: WeatherCoordinator) {
+        self.coordinator = coordinator
     }
+
+    let backgroundImage = UIImage(named: "landscape")
 }
