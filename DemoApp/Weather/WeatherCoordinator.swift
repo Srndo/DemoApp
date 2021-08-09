@@ -21,7 +21,7 @@ class WeatherCoordinator: Coordinator {
         let viewModel = WeatherViewModel()
         viewController = WeatherViewController(viewModel: viewModel)
         if  let viewController = viewController {
-            window.rootUINavigationController()?.pushViewController(viewController, animated: false)
+            window.rootUINavigationController()?.pushViewController(viewController, animated: true)
         }
     }
 }

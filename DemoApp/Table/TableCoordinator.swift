@@ -22,7 +22,7 @@ class TableCoordinator: Coordinator {
         viewModel = TableViewModel(coordinator: self)
         viewController = TableViewController(viewModel: viewModel)
         if let viewController = viewController {
-            window.rootUINavigationController()?.pushViewController(viewController, animated: false)
+            window.rootUINavigationController()?.pushViewController(viewController, animated: true)
         }
     }
 
