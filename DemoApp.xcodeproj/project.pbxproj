@@ -39,6 +39,7 @@
 		F4CA779426C13F28008860CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4CA779326C13F28008860CD /* Main.storyboard */; };
 		F4CA779626C14A1B008860CD /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA779526C14A1B008860CD /* Storyboarded.swift */; };
 		F4CA779826C157B3008860CD /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4CA779726C157B3008860CD /* Detail.storyboard */; };
+		F4CA779A26C1B8E5008860CD /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4CA779926C1B8E5008860CD /* Weather.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		F4CA779326C13F28008860CD /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F4CA779526C14A1B008860CD /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		F4CA779726C157B3008860CD /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		F4CA779926C1B8E5008860CD /* Weather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				F4CA776826BAA4DB008860CD /* WeatherCoordinator.swift */,
 				F4CA776A26BAA4EF008860CD /* WeatherViewController.swift */,
 				F4CA776C26BAA4F8008860CD /* WeatherViewModel.swift */,
+				F4CA779926C1B8E5008860CD /* Weather.storyboard */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4CA779426C13F28008860CD /* Main.storyboard in Resources */,
+				F4CA779A26C1B8E5008860CD /* Weather.storyboard in Resources */,
 				F4CA774C26BA9C78008860CD /* LaunchScreen.storyboard in Resources */,
 				F4CA774926BA9C78008860CD /* Assets.xcassets in Resources */,
 				F4CA779826C157B3008860CD /* Detail.storyboard in Resources */,
