@@ -10,18 +10,9 @@ import UIKit
 class DetailViewModel {
 
     var coordinator: DetailCoordinator!
-    var userDidChange: ((DetailUserModel) -> Void)? {
-        didSet {
-            userDidChange?(user)
-        }
-    }
 
     let title = "Detail"
-    var user: DetailUserModel {
-       didSet {
-            userDidChange?(user)
-        }
-    }
+    var user: DetailUserModel
 
     init(coordinator: DetailCoordinator, user: CellUserModel) {
         self.coordinator = coordinator
@@ -38,6 +29,10 @@ class DetailViewModel {
             }
             guard let user = user else { return }
             self.user = user
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.coordinator.viewController?.fillLabels(user)
+                self.coordinator.viewController?.stopSpinner()
+            }
         }
     }
 

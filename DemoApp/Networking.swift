@@ -7,15 +7,6 @@
 
 import Alamofire
 
-/*
-                    TODO
- - make one more separate fetch for filling: ID, Name, etc
- - make another fetch to fill remaing data of structure User
-
- - use storyboarding with Coordinators in weather
- - make extension for reype rootviewController as UINavigationViewController
- */
-
 class Networking {
     typealias WebserviceTableDataResponse = ([CellUserModel]?, Error?) -> Void
     typealias WebserviceDetailDataResponse = (DetailUserModel?, Error?) -> Void

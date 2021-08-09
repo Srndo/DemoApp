@@ -20,8 +20,8 @@ class DetailCoordinator: Coordinator {
     }
 
     func start() {
-        let viewModel = DetailViewModel(coordinator: self, user: user)
-        viewController = DetailViewController(viewModel)
+        viewController = DetailViewController.instantiate(name: "Detail")
+        viewController?.viewModel = DetailViewModel(coordinator: self, user: user)
         if let viewController = viewController {
             window.rootUINavigationController()?.pushViewController(viewController, animated: true)
         }

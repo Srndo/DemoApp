@@ -8,14 +8,14 @@
 import UIKit
 
 protocol Storyboarded {
-    static func instantiate() -> Self
+    static func instantiate(name: String) -> Self
 }
 
 extension Storyboarded {
-    static func instantiate() -> Self {
+    static func instantiate(name: String) -> Self {
         // swiftlint:disable:next identifier_name
         let id = String(describing: self)
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let storyboard = UIStoryboard(name: name, bundle: Bundle.main)
         // swiftlint:disable:next force_cast
         return storyboard.instantiateViewController(identifier: id) as! Self
     }
