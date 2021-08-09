@@ -13,13 +13,15 @@ class DetailViewController: UIViewController {
     let emailLabel = MyLabel()
     let phoneLabel = MyLabel()
     let addressLabel = MyLabel()
+    let spinner = SpinnerViewController()
 
     init(_ viewModel: DetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         viewModel.userDidChange = { [weak self] (user: DetailUserModel) in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {          // fake gap between geting data (2 seconds)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {          // fake gap between geting data (1 seconds)
                 self?.fillLabels(user)
+                self?.spinner.removeSpinnerView(parent: self!)
             }
         }
     }
@@ -33,6 +35,7 @@ class DetailViewController: UIViewController {
         view.backgroundColor = .systemBackground
         title = viewModel.title
         createLabels()
+        spinner.createSpinnerView(parent: self)
     }
 
     override func viewDidDisappear(_ animated: Bool) {
