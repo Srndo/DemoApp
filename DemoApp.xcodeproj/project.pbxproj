@@ -32,6 +32,10 @@
 		F4CA778026BC0FEC008860CD /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777F26BC0FEC008860CD /* CustomCell.swift */; };
 		F4CA778726BD28BA008860CD /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA778626BD28BA008860CD /* UIWindowExtension.swift */; };
 		F4CA778926BD3279008860CD /* CustomCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA778826BD3279008860CD /* CustomCellModel.swift */; };
+		F4CA778B26C11209008860CD /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA778A26C11209008860CD /* Spinner.swift */; };
+		F4CA778E26C11AF0008860CD /* FilterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA778D26C11AF0008860CD /* FilterCoordinator.swift */; };
+		F4CA779026C11B9C008860CD /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA778F26C11B9C008860CD /* FilterViewController.swift */; };
+		F4CA779226C11C20008860CD /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA779126C11C20008860CD /* FilterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,10 @@
 		F4CA777F26BC0FEC008860CD /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		F4CA778626BD28BA008860CD /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
 		F4CA778826BD3279008860CD /* CustomCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellModel.swift; sourceTree = "<group>"; };
+		F4CA778A26C11209008860CD /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		F4CA778D26C11AF0008860CD /* FilterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCoordinator.swift; sourceTree = "<group>"; };
+		F4CA778F26C11B9C008860CD /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		F4CA779126C11C20008860CD /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +166,7 @@
 				F4CA776126BAA479008860CD /* TableCoordinator.swift */,
 				F4CA776426BAA48F008860CD /* TableViewController.swift */,
 				F4CA776626BAA4B6008860CD /* TableViewModel.swift */,
+				F4CA778C26C11ACD008860CD /* Filter */,
 				31805F8726BC40EA00E0115D /* Cells */,
 				F4CA775526BA9C99008860CD /* Detail */,
 			);
@@ -205,6 +214,7 @@
 			children = (
 				F4CA777226BAA94E008860CD /* MyButton.swift */,
 				F4CA777A26BC047A008860CD /* Label.swift */,
+				F4CA778A26C11209008860CD /* Spinner.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -215,6 +225,16 @@
 				F4CA778626BD28BA008860CD /* UIWindowExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F4CA778C26C11ACD008860CD /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				F4CA778D26C11AF0008860CD /* FilterCoordinator.swift */,
+				F4CA778F26C11B9C008860CD /* FilterViewController.swift */,
+				F4CA779126C11C20008860CD /* FilterViewModel.swift */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,11 +381,15 @@
 				F4CA775C26BA9D8C008860CD /* User.swift in Sources */,
 				F4CA776D26BAA4F8008860CD /* WeatherViewModel.swift in Sources */,
 				F4CA777B26BC047A008860CD /* Label.swift in Sources */,
+				F4CA778E26C11AF0008860CD /* FilterCoordinator.swift in Sources */,
 				F4CA776B26BAA4EF008860CD /* WeatherViewController.swift in Sources */,
 				F4CA776926BAA4DB008860CD /* WeatherCoordinator.swift in Sources */,
 				F4CA776226BAA479008860CD /* TableCoordinator.swift in Sources */,
+				F4CA779226C11C20008860CD /* FilterViewModel.swift in Sources */,
 				31805F8626BC318D00E0115D /* MainViewModel.swift in Sources */,
+				F4CA778B26C11209008860CD /* Spinner.swift in Sources */,
 				F4CA777326BAA94E008860CD /* MyButton.swift in Sources */,
+				F4CA779026C11B9C008860CD /* FilterViewController.swift in Sources */,
 				F4CA778926BD3279008860CD /* CustomCellModel.swift in Sources */,
 				F4CA776526BAA48F008860CD /* TableViewController.swift in Sources */,
 				F4CA777726BBBE21008860CD /* DetailViewController.swift in Sources */,
