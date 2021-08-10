@@ -1,24 +1,42 @@
 PODS:
   - Alamofire (4.9.1)
+  - PromiseKit (6.15.3):
+    - PromiseKit/CorePromise (= 6.15.3)
+    - PromiseKit/Foundation (= 6.15.3)
+    - PromiseKit/UIKit (= 6.15.3)
+  - PromiseKit/CoreLocation (6.15.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/CorePromise (6.15.3)
+  - PromiseKit/Foundation (6.15.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/MapKit (6.15.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.15.3):
+    - PromiseKit/CorePromise
   - SwiftFormat/CLI (0.48.11)
   - SwiftLint (0.43.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - PromiseKit (~> 6.0)
+  - PromiseKit/CoreLocation
+  - PromiseKit/MapKit
   - SwiftFormat/CLI
   - SwiftLint
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - PromiseKit
     - SwiftFormat
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  PromiseKit: 3b2b6995e51a954c46dbc550ce3da44fbfb563c5
   SwiftFormat: 938e5865a118c49d63c7a290ddad86335f9e585f
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
 
-PODFILE CHECKSUM: cede94c46018394df05be163c59a4cb27e796c13
+PODFILE CHECKSUM: bb34fea6c01b8141132d770572f7e516012b6369
 
 COCOAPODS: 1.10.2

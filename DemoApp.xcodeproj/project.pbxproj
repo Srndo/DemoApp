@@ -40,6 +40,10 @@
 		F4CA779626C14A1B008860CD /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA779526C14A1B008860CD /* Storyboarded.swift */; };
 		F4CA779826C157B3008860CD /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4CA779726C157B3008860CD /* Detail.storyboard */; };
 		F4CA779A26C1B8E5008860CD /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4CA779926C1B8E5008860CD /* Weather.storyboard */; };
+		F4CA779C26C24270008860CD /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA779B26C2426F008860CD /* WeatherModel.swift */; };
+		F4CA779E26C247AF008860CD /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA779D26C247AF008860CD /* LocationHelper.swift */; };
+		F4CA77A026C24969008860CD /* WeatherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA779F26C24969008860CD /* WeatherHelper.swift */; };
+		F4CA77A226C27728008860CD /* BrokenPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA77A126C27728008860CD /* BrokenPromise.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +84,10 @@
 		F4CA779526C14A1B008860CD /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		F4CA779726C157B3008860CD /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		F4CA779926C1B8E5008860CD /* Weather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
+		F4CA779B26C2426F008860CD /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		F4CA779D26C247AF008860CD /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		F4CA779F26C24969008860CD /* WeatherHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHelper.swift; sourceTree = "<group>"; };
+		F4CA77A126C27728008860CD /* BrokenPromise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrokenPromise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +159,9 @@
 				F4CA775A26BA9D6F008860CD /* Models */,
 				F4CA777126BAA928008860CD /* UIElements */,
 				F4CA776F26BAA7E3008860CD /* Networking.swift */,
+				F4CA779D26C247AF008860CD /* LocationHelper.swift */,
+				F4CA77A126C27728008860CD /* BrokenPromise.swift */,
+				F4CA779F26C24969008860CD /* WeatherHelper.swift */,
 				F4CA774826BA9C78008860CD /* Assets.xcassets */,
 				F4CA774A26BA9C78008860CD /* LaunchScreen.storyboard */,
 				F4CA774D26BA9C78008860CD /* Info.plist */,
@@ -200,6 +211,7 @@
 				F4CA776A26BAA4EF008860CD /* WeatherViewController.swift */,
 				F4CA776C26BAA4F8008860CD /* WeatherViewModel.swift */,
 				F4CA779926C1B8E5008860CD /* Weather.storyboard */,
+				F4CA779B26C2426F008860CD /* WeatherModel.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -394,19 +406,23 @@
 				F4CA777526BBBE16008860CD /* DetailCoordinator.swift in Sources */,
 				F4CA774026BA9C76008860CD /* AppDelegate.swift in Sources */,
 				F4CA775C26BA9D8C008860CD /* User.swift in Sources */,
+				F4CA779C26C24270008860CD /* WeatherModel.swift in Sources */,
 				F4CA776D26BAA4F8008860CD /* WeatherViewModel.swift in Sources */,
 				F4CA777B26BC047A008860CD /* Label.swift in Sources */,
 				F4CA778E26C11AF0008860CD /* FilterCoordinator.swift in Sources */,
 				F4CA776B26BAA4EF008860CD /* WeatherViewController.swift in Sources */,
 				F4CA776926BAA4DB008860CD /* WeatherCoordinator.swift in Sources */,
+				F4CA77A026C24969008860CD /* WeatherHelper.swift in Sources */,
 				F4CA776226BAA479008860CD /* TableCoordinator.swift in Sources */,
 				F4CA779226C11C20008860CD /* FilterViewModel.swift in Sources */,
+				F4CA77A226C27728008860CD /* BrokenPromise.swift in Sources */,
 				31805F8626BC318D00E0115D /* MainViewModel.swift in Sources */,
 				F4CA778B26C11209008860CD /* Spinner.swift in Sources */,
 				F4CA777326BAA94E008860CD /* MyButton.swift in Sources */,
 				F4CA779026C11B9C008860CD /* FilterViewController.swift in Sources */,
 				F4CA778926BD3279008860CD /* CustomCellModel.swift in Sources */,
 				F4CA776526BAA48F008860CD /* TableViewController.swift in Sources */,
+				F4CA779E26C247AF008860CD /* LocationHelper.swift in Sources */,
 				F4CA779626C14A1B008860CD /* Storyboarded.swift in Sources */,
 				F4CA777726BBBE21008860CD /* DetailViewController.swift in Sources */,
 				F4CA775E26BA9DBB008860CD /* AppCoordinator.swift in Sources */,
