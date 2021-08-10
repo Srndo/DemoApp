@@ -19,6 +19,7 @@ class WeatherViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackgroundImage()
+        title = viewModel.title
         viewModel.updateWithCurrentLocation {
             self.fillData()
             self.setIcon()

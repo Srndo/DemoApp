@@ -21,6 +21,7 @@ class WeatherViewModel {
     let coordinator: WeatherCoordinator
     let weatherHelper = WeatherHelper()
     let locationHelper = LocationHelper()
+    let title = "Weather"
 
     var labelText: [LabelNames: String] = [:]
     var thirdLabelColor: UIColor = UIColor.white
