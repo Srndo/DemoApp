@@ -71,7 +71,7 @@ class WeatherViewModel {
           .then { [weak self] weather -> Promise<UIImage> in
             guard let self = self else { return brokenPromise() }
 
-            self.labelText[.second] = "\(weather.main.temp)ºC"
+            self.labelText[.second] = "\(weather.main.temp.rounded())ºC"
             self.labelText[.third] = weather.weather.first?.description
             completition()
             return self.weatherHelper.getIcon(named: weather.weather.first!.icon)

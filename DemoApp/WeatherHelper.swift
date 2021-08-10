@@ -70,7 +70,7 @@ class WeatherHelper {
                let image = UIImage(data: data) {
                 DispatchQueue.main.async { completion(image, nil) }
             } else {
-                let error = NSError(domain: "WeatherOrNot",
+                let error = NSError(domain: "DemoApp",
                                     code: 0,
                                     userInfo: [NSLocalizedDescriptionKey: "Image file '\(named)' not found."])
                 DispatchQueue.main.async { completion(nil, error) }

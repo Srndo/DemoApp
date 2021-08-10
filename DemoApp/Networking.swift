@@ -19,12 +19,12 @@ class Networking {
             }
             guard let data = response.data else {
                 // swiftlint:disable:next line_length
-                completition(nil, NSError(domain: "Coordinator", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data in response."]))
+                completition(nil, NSError(domain: "DemoApp", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data in response."]))
                 return
             }
             guard let users = try? JSONDecoder().decode([CellUserModel].self, from: data) else {
                 // swiftlint:disable:next line_length
-                completition(nil, NSError(domain: "Coordinator", code: 0, userInfo: [NSLocalizedDescriptionKey: "Cannot decode data from response."]))
+                completition(nil, NSError(domain: "DemoApp", code: 0, userInfo: [NSLocalizedDescriptionKey: "Cannot decode data from response."]))
                 return
             }
             completition(users, nil)
@@ -39,12 +39,12 @@ class Networking {
             }
             guard let data = response.data else {
                 // swiftlint:disable:next line_length
-                completition(nil, NSError(domain: "Coordinator", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data in response."]))
+                completition(nil, NSError(domain: "DemoApp", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data in response."]))
                 return
             }
             guard let user = try? JSONDecoder().decode(DetailUserModel.self, from: data) else {
                 // swiftlint:disable:next line_length
-                completition(nil, NSError(domain: "Coordinator", code: 0, userInfo: [NSLocalizedDescriptionKey: "Cannot decode data from response."]))
+                completition(nil, NSError(domain: "DemoApp", code: 0, userInfo: [NSLocalizedDescriptionKey: "Cannot decode data from response."]))
                 return
             }
             completition(user, nil)
