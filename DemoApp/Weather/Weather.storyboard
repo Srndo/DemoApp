@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,14 +13,14 @@
             <objects>
                 <viewController storyboardIdentifier="WeatherViewController" id="Y6W-OH-hqX" customClass="WeatherViewController" customModule="DemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EO1-zn-dvW">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxD-3P-7hi" userLabel="PlaceLabel">
-                                <rect key="frame" x="107" y="244" width="200" height="50"/>
+                                <rect key="frame" x="348" y="20" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Qzn-MK-VUH"/>
                                     <constraint firstAttribute="height" constant="50" id="iU5-Gs-sAH"/>
@@ -30,7 +30,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKD-T6-S2I" userLabel="TempLabel">
-                                <rect key="frame" x="107" y="324" width="200" height="50"/>
+                                <rect key="frame" x="348" y="100" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Qgw-NZ-cAL"/>
                                     <constraint firstAttribute="width" constant="200" id="pAD-o2-Kae"/>
@@ -40,14 +40,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yFO-WX-XbF" userLabel="IconImage View">
-                                <rect key="frame" x="87" y="404" width="240" height="130"/>
+                                <rect key="frame" x="328" y="158" width="240" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="ofH-89-3fh"/>
                                     <constraint firstAttribute="width" constant="240" id="trS-C5-uNm"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A82-d6-cqc" userLabel="ConditionLabel">
-                                <rect key="frame" x="107" y="564" width="200" height="50"/>
+                                <rect key="frame" x="348" y="309" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Sft-BI-s5n"/>
                                     <constraint firstAttribute="width" constant="200" id="c4O-AM-f2T"/>
@@ -65,13 +65,17 @@
                                 <variation key="heightClass=compact" constant="20"/>
                             </constraint>
                             <constraint firstItem="EO1-zn-dvW" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="YpE-Ie-9FM"/>
-                            <constraint firstItem="A82-d6-cqc" firstAttribute="top" secondItem="yFO-WX-XbF" secondAttribute="bottom" constant="30" id="baZ-Hg-sl1"/>
+                            <constraint firstItem="A82-d6-cqc" firstAttribute="top" secondItem="yFO-WX-XbF" secondAttribute="bottom" constant="30" id="baZ-Hg-sl1">
+                                <variation key="heightClass=compact" constant="21"/>
+                            </constraint>
                             <constraint firstItem="EO1-zn-dvW" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="dC0-N5-87C"/>
                             <constraint firstAttribute="trailing" secondItem="EO1-zn-dvW" secondAttribute="trailing" id="duJ-6g-Iiv"/>
                             <constraint firstItem="A82-d6-cqc" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="eQI-qo-hKy"/>
                             <constraint firstAttribute="bottom" secondItem="EO1-zn-dvW" secondAttribute="bottom" id="f0U-Kb-8Ys"/>
                             <constraint firstItem="eKD-T6-S2I" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="gNz-6p-WOM"/>
-                            <constraint firstItem="yFO-WX-XbF" firstAttribute="top" secondItem="eKD-T6-S2I" secondAttribute="bottom" constant="30" id="khD-Vj-NJy"/>
+                            <constraint firstItem="yFO-WX-XbF" firstAttribute="top" secondItem="eKD-T6-S2I" secondAttribute="bottom" constant="30" id="khD-Vj-NJy">
+                                <variation key="heightClass=compact" constant="8"/>
+                            </constraint>
                             <constraint firstItem="oxD-3P-7hi" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="nno-tT-GPw"/>
                             <constraint firstItem="yFO-WX-XbF" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="sne-gm-IOs"/>
                         </constraints>
