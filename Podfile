@@ -10,6 +10,9 @@ target 'DemoApp' do
 pod 'SwiftLint'
 pod 'Alamofire', '~> 4.0'
 pod 'SwiftFormat/CLI'
+pod "PromiseKit", "~> 6.0"
+pod "PromiseKit/CoreLocation"
+pod "PromiseKit/MapKit"
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
