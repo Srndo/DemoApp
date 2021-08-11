@@ -25,10 +25,8 @@ class TableViewController: UITableViewController {
         configureTable()
         title = viewModel.title
         view.backgroundColor = .systemBackground
-        viewModel.getData {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+        viewModel.filtredUsers.bind { _ in
+            self.tableView.reloadData()
         }
         // swiftlint:disable:next line_length
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: viewModel.navButtonType, target: self, action: #selector(navButtonTap))
@@ -53,13 +51,13 @@ class TableViewController: UITableViewController {
 
 extension TableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.filtredUsers.count
+        viewModel.filtredUsers.value.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable:next force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as! CustomCell
-        cell.set(cell: viewModel.filtredUsers[indexPath.row])
+        cell.set(cell: viewModel.filtredUsers.value[indexPath.row])
         return cell
     }
 

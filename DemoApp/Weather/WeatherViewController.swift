@@ -20,9 +20,16 @@ class WeatherViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         setBackgroundImage()
         title = viewModel.title
-        viewModel.updateWithCurrentLocation {
-            self.fillData()
+        viewModel.labelText.bind { _ in
+            self.fillLabels()
+        }
+
+        viewModel.iconImage.bind { _ in
             self.setIcon()
+        }
+
+        viewModel.thirdLabelColor.bind { _ in
+            self.setThirdLabelColor()
         }
     }
 
@@ -30,14 +37,16 @@ class WeatherViewController: UIViewController, Storyboarded {
         imageView.image = viewModel.backgroundImage
     }
 
-    private func fillData() {
-        firstLabel.text = viewModel.labelText[.first]
-        secondLabel.text = viewModel.labelText[.second]
-        thirdLabel.text = viewModel.labelText[.third]
-        thirdLabel.textColor = viewModel.thirdLabelColor
+    private func setThirdLabelColor() {
+        thirdLabel.textColor = viewModel.thirdLabelColor.value
+    }
+    private func fillLabels() {
+        firstLabel.text = viewModel.labelText.value[.first]
+        secondLabel.text = viewModel.labelText.value[.second]
+        thirdLabel.text = viewModel.labelText.value[.third]
     }
 
     private func setIcon() {
-        iconImage.image = viewModel.iconImage
+        iconImage.image = viewModel.iconImage.value
     }
 }

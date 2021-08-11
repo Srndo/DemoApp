@@ -8,7 +8,6 @@
 import UIKit
 import PromiseKit
 
-private let appID = "3378aaf40a3bca178a4272ce250385b2"
 private let errorColor = UIColor(red: 0.96, green: 0.667, blue: 0.690, alpha: 1)
 
 class WeatherViewModel {
@@ -23,68 +22,67 @@ class WeatherViewModel {
     let locationHelper = LocationHelper()
     let title = "Weather"
 
-    var labelText: [LabelNames: String] = [:]
-    var thirdLabelColor: UIColor = UIColor.white
-    var iconImage: UIImage?
+    var labelText: Observable<[LabelNames: String]> = Observable([:])
+    var thirdLabelColor: Observable<UIColor> = Observable(UIColor.white)
+    var iconImage: Observable<UIImage?> = Observable(nil)
 
     init(coordinator: WeatherCoordinator) {
         self.coordinator = coordinator
+        updateWithCurrentLocation()
     }
 
     let backgroundImage = UIImage(named: "landscape")
 
-    func updateWithCurrentLocation(completition: @escaping () -> Void) {
+    private func updateWithCurrentLocation() {
         locationHelper.getLocation()
             .done { [weak self] placemark in
-                self?.handleLocation(placemark: placemark, completition: completition)
-                completition()
+                self?.handleLocation(placemark: placemark)
             }
             .catch { [weak self] error in
                 guard let self = self else { return }
-                self.labelText[.first] = "---"
-                self.labelText[.second] = "---"
+                self.labelText.value[.first] = "---"
+                self.labelText.value[.second] = "---"
 
                 switch error {
                 case is CLError where (error as? CLError)?.code == .denied:
-                    self.labelText[.third] = "Enable Location Permissions in Settings"
-                    self.thirdLabelColor = UIColor.white
+                    self.labelText.value[.third] = "Enable Location Permissions in Settings"
+                    self.thirdLabelColor.value = UIColor.white
                 default:
-                    self.labelText[.third] = error.localizedDescription
-                    self.thirdLabelColor = errorColor
+                    self.labelText.value[.third] = error.localizedDescription
+                    self.thirdLabelColor.value = errorColor
                 }
-                completition()
             }
     }
 
-    private func handleLocation(placemark: CLPlacemark, completition: @escaping () -> Void) {
-        // swiftlint:disable:next line_length
-        handleLocation(city: placemark.locality, state: placemark.administrativeArea, coordinate: placemark.location!.coordinate, completition: completition)
+    private func handleLocation(placemark: CLPlacemark) {
+        handleLocation( city: placemark.locality,
+                       state: placemark.administrativeArea,
+                       coordinate: placemark.location!.coordinate)
     }
 
-    // swiftlint:disable:next line_length
-    private func handleLocation(city: String?, state: String?, coordinate: CLLocationCoordinate2D, completition: @escaping () -> Void) {
+    private func handleLocation( city: String?,
+                                state: String?,                             // swiftlint:disable:this vertical_parameter_alignment line_length
+                                coordinate: CLLocationCoordinate2D) {        // swiftlint:disable:this vertical_parameter_alignment line_length
         if let city = city, let state = state {
-            self.labelText[.first] = "\(city), \(state)"
+            self.labelText.value[.first] = "\(city), \(state)"
         }
 
         weatherHelper.getWeather(atLatitude: coordinate.latitude, longitude: coordinate.longitude)
           .then { [weak self] weather -> Promise<UIImage> in
             guard let self = self else { return brokenPromise() }
 
-            self.labelText[.second] = "\(weather.main.temp.rounded())ºC"
-            self.labelText[.third] = weather.weather.first?.description
-            completition()
+            self.labelText.value[.second] = "\(weather.main.temp.rounded())ºC"
+            self.labelText.value[.third] = weather.weather.first?.description
+
             return self.weatherHelper.getIcon(named: weather.weather.first!.icon)
           }
           .done(on: DispatchQueue.main) { icon in
-            self.iconImage = icon
-            completition()
+            self.iconImage.value = icon
           }
           .catch { error in
-            self.labelText[.second] = "--"
-            self.labelText[.third] = error.localizedDescription
-            self.thirdLabelColor = errorColor
-            completition()
+            self.labelText.value[.second] = "--"
+            self.labelText.value[.third] = error.localizedDescription
+            self.thirdLabelColor.value = errorColor
           }
     }
 }

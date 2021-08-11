@@ -20,18 +20,22 @@ class DetailViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = viewModel.title
-        fillLabels(viewModel.user)
+        viewModel.user.bind { _ in
+            self.fillLabels()
+            self.stopSpinner()
+        }
         spinner.createSpinnerView(parent: self)
     }
 
     func stopSpinner() {
+        guard spinner.parent != nil else { return }
         self.spinner.removeSpinnerView(parent: self)
     }
 
-    func fillLabels(_ user: DetailUserModel) {
-        nameLabel?.text = user.name
-        addressLabel?.text = "\(user.address.city), \(user.address.street)"
-        phoneLabel?.text = user.phone
-        emailLabel?.text = user.email
+    func fillLabels() {
+        nameLabel?.text = viewModel.user.value.name
+        addressLabel?.text = "\(viewModel.user.value.address.city), \(viewModel.user.value.address.street)"
+        phoneLabel?.text = viewModel.user.value.phone
+        emailLabel?.text = viewModel.user.value.email
     }
 }

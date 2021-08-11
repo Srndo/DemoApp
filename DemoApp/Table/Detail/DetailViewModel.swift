@@ -12,11 +12,11 @@ class DetailViewModel {
     var coordinator: DetailCoordinator!
 
     let title = "Detail"
-    var user: DetailUserModel
+    var user: Observable<DetailUserModel>
 
     init(coordinator: DetailCoordinator, user: CellUserModel) {
         self.coordinator = coordinator
-        self.user = DetailUserModel(user)
+        self.user = Observable(DetailUserModel(user))
         getData(userID: user.id)
     }
 
@@ -28,10 +28,8 @@ class DetailViewModel {
                 return
             }
             guard let user = user else { return }
-            self.user = user
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.coordinator.viewController?.fillLabels(user)
-                self.coordinator.viewController?.stopSpinner()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.user.value = user
             }
         }
     }

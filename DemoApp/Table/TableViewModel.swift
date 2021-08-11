@@ -13,14 +13,15 @@ class TableViewModel {
 
     init(coordinator: TableCoordinator) {
         self.coordinator = coordinator
+        getData()
     }
 
     let navButtonType: UIBarButtonItem.SystemItem = .search
     let title = "Table"
-    var users: [CellUserModel] = []
-    var filtredUsers: [CellUserModel] = []
+    private var users: [CellUserModel] = []
+    var filtredUsers: Observable<[CellUserModel]> = Observable([])
 
-    func getData(completition: @escaping () -> Void) {
+    private func getData() {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/users/") else { return }
         Networking().fetchForTableData(url) { (users, error) in
             if let error = error {
@@ -31,8 +32,7 @@ class TableViewModel {
             for user in users {
                 self.users.append(user)
             }
-            self.filtredUsers = self.users
-            completition()
+            self.filtredUsers.value = self.users
         }
     }
 
@@ -42,9 +42,9 @@ class TableViewModel {
 
     func setFilter(key: String?) {
         if let key = key {
-            self.filtredUsers = self.users.filter { $0.name.starts(with: key) }
+            self.filtredUsers.value = self.users.filter { $0.name.starts(with: key) }
         } else {
-            self.filtredUsers = self.users
+            self.filtredUsers.value = self.users
         }
         DispatchQueue.main.async {
             self.coordinator.viewController?.tableView.reloadData()
@@ -52,7 +52,7 @@ class TableViewModel {
     }
 
     func didSelect(at indexPath: IndexPath) {
-        guard let user = filtredUsers[safe: indexPath.row] else { return }
+        guard let user = filtredUsers.value[safe: indexPath.row] else { return }
         coordinator.toDetail(user: user)
     }
 }
