@@ -57,9 +57,3 @@ class TableViewModel {
         coordinator.toDetail(user: user)
     }
 }
-
-extension Collection {
-    subscript(safe index: Index) -> Element? {
-        self.indices.contains(index) ? self[index] : nil
-    }
-}
