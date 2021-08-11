@@ -8,12 +8,10 @@
 import UIKit
 import PromiseKit
 
-private let appID = "3378aaf40a3bca178a4272ce250385b2"
-
 class WeatherHelper {
     func getWeather(atLatitude latitude: Double, longitude: Double) -> Promise<WeatherModel> {
         // swiftlint:disable:next line_length
-        let urlString = "https://api.openweathermap.org/data/2.5/weather?" + "lat=\(latitude)&lon=\(longitude)&appid=\(appID)&units=metric"
+        let urlString = "https://api.openweathermap.org/data/2.5/weather?" + "lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)&units=metric"
         let url = URL(string: urlString)!
         return firstly {
             URLSession.shared.dataTask(.promise, with: url)
