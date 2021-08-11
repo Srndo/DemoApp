@@ -32,7 +32,9 @@ class TableCoordinator: Coordinator {
         controller.parentCoordinator = self
         controller.start()
     }
+}
 
+extension TableCoordinator: HaveFilterCoordinator {
     func showFilter() {
         let controller = FilterCoordinator(window: window)
         childCoordinators.append(controller)
@@ -40,7 +42,7 @@ class TableCoordinator: Coordinator {
         controller.start()
     }
 
-    func filterDidFinish(key: String?) {
+    func filterDidFinish(with key: String?) {
         viewModel.setFilter(key: key)
     }
 }

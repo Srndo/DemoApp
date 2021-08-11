@@ -23,9 +23,6 @@ class FilterViewModel {
     let buttonTitle = "Search"
 
     func buttonTap(key: String?) {
-        coordinator.viewController?.dismiss(animated: true) {
-            guard let tableCoordinator = self.coordinator.parentCoordinator as? TableCoordinator else { return }
-            tableCoordinator.filterDidFinish(key: key)
-        }
+        coordinator.setFilter(with: key)
     }
 }

@@ -24,4 +24,11 @@ class FilterCoordinator: Coordinator {
             window.rootUINavigationController()?.present(viewController, animated: true)
         }
     }
+
+    func setFilter(with key: String?) {
+        viewController?.dismiss(animated: true) {
+            guard let tableCoordinator = self.parentCoordinator as? HaveFilterCoordinator else { return }
+            tableCoordinator.filterDidFinish(with: key)
+        }
+    }
 }
