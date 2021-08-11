@@ -16,6 +16,7 @@
 		F4A64CF626C41091006B432F /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4A64CF526C41091006B432F /* CustomCell.xib */; };
 		F4A64CF826C413E0006B432F /* Table.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A64CF726C413E0006B432F /* Table.storyboard */; };
 		F4A64CFA26C42150006B432F /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A64CF926C42150006B432F /* CollectionExtension.swift */; };
+		F4A64CFC26C421D3006B432F /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A64CFB26C421D3006B432F /* Filter.storyboard */; };
 		F4CA774026BA9C76008860CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA773F26BA9C76008860CD /* AppDelegate.swift */; };
 		F4CA774426BA9C76008860CD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA774326BA9C76008860CD /* MainViewController.swift */; };
 		F4CA774926BA9C78008860CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4CA774826BA9C78008860CD /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		F4A64CF526C41091006B432F /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		F4A64CF726C413E0006B432F /* Table.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Table.storyboard; sourceTree = "<group>"; };
 		F4A64CF926C42150006B432F /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
+		F4A64CFB26C421D3006B432F /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
 		F4CA773C26BA9C76008860CD /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4CA773F26BA9C76008860CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4CA774326BA9C76008860CD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -229,8 +231,8 @@
 				F4CA776826BAA4DB008860CD /* WeatherCoordinator.swift */,
 				F4CA776A26BAA4EF008860CD /* WeatherViewController.swift */,
 				F4CA776C26BAA4F8008860CD /* WeatherViewModel.swift */,
-				F4CA779926C1B8E5008860CD /* Weather.storyboard */,
 				F4CA779B26C2426F008860CD /* WeatherModel.swift */,
+				F4CA779926C1B8E5008860CD /* Weather.storyboard */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -278,6 +280,7 @@
 				F4CA778D26C11AF0008860CD /* FilterCoordinator.swift */,
 				F4CA778F26C11B9C008860CD /* FilterViewController.swift */,
 				F4CA779126C11C20008860CD /* FilterViewModel.swift */,
+				F4A64CFB26C421D3006B432F /* Filter.storyboard */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				F4CA779A26C1B8E5008860CD /* Weather.storyboard in Resources */,
 				F4CA774C26BA9C78008860CD /* LaunchScreen.storyboard in Resources */,
 				F4CA774926BA9C78008860CD /* Assets.xcassets in Resources */,
+				F4A64CFC26C421D3006B432F /* Filter.storyboard in Resources */,
 				F4CA779826C157B3008860CD /* Detail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

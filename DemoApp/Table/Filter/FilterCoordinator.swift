@@ -18,8 +18,8 @@ class FilterCoordinator: Coordinator {
     }
 
     func start() {
-        let viewModel = FilterViewModel(coordinator: self)
-        viewController = FilterViewController(viewModel: viewModel)
+        viewController = FilterViewController.instantiate(name: "Filter")
+        viewController?.viewModel = FilterViewModel(coordinator: self)
         if let viewController = viewController {
             window.rootUINavigationController()?.present(viewController, animated: true)
         }
