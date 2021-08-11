@@ -20,7 +20,8 @@ class TableCoordinator: Coordinator {
 
     func start() {
         viewModel = TableViewModel(coordinator: self)
-        viewController = TableViewController(viewModel: viewModel)
+        viewController = TableViewController.instantiate(name: "Table")
+        viewController?.viewModel = viewModel
         if let viewController = viewController {
             window.rootUINavigationController()?.pushViewController(viewController, animated: true)
         }

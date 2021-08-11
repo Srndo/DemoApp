@@ -7,41 +7,21 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class TableViewController: UIViewController, Storyboarded {
 
+    @IBOutlet var tableView: UITableView!
     var viewModel: TableViewModel!
-
-    init(viewModel: TableViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
         title = viewModel.title
-        view.backgroundColor = .systemBackground
-        viewModel.filtredUsers.bind { _ in
+        view.backgroundColor = viewModel.backgroundColor
+        viewModel.filtredData.bind { _ in
             self.tableView.reloadData()
         }
         // swiftlint:disable:next line_length
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: viewModel.navButtonType, target: self, action: #selector(navButtonTap))
-    }
-
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-
-    }
-
-    private func configureTable() {
-        tableView.register(CustomCell.self, forCellReuseIdentifier: "CustomCell")
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.rowHeight = 100
     }
 
     @objc func navButtonTap() {
@@ -49,19 +29,27 @@ class TableViewController: UITableViewController {
     }
 }
 
-extension TableViewController {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.filtredUsers.value.count
+extension TableViewController: UITableViewDataSource, UITableViewDelegate {
+    private func configureTable() {
+        let nib = UINib(nibName: "\(viewModel.cellType)", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "\(viewModel.cellType)")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = viewModel.rowHeight
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.filtredData.value.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable:next force_cast
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as! CustomCell
-        cell.set(cell: viewModel.filtredUsers.value[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "\(viewModel.cellType)") as! CustomCell
+        cell.set(cell: viewModel.filtredData.value[indexPath.row])
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.didSelect(at: indexPath)
     }
 }
