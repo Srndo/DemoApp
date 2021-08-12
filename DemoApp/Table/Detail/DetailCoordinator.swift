@@ -18,8 +18,10 @@ class DetailCoordinator: Coordinator {
         self.window = window
         self.user = cellUser
     }
+}
 
-    func start() {
+extension DetailCoordinator: CoordinatorWithInternetCheck {
+    func startInternetON() {
         viewController = DetailViewController.instantiate(name: "Detail")
         viewController?.viewModel = DetailViewModel(coordinator: self, user: user)
         if let viewController = viewController {

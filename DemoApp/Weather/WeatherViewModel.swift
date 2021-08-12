@@ -8,7 +8,7 @@
 import UIKit
 import PromiseKit
 
-fileprivate let errorColor = UIColor(red: 0.96, green: 0.667, blue: 0.690, alpha: 1)
+private let errorColor = UIColor(red: 0.96, green: 0.667, blue: 0.690, alpha: 1)
 
 class WeatherViewModel {
     enum LabelNames: String {

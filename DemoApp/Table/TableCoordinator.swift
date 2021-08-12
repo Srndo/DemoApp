@@ -18,15 +18,6 @@ class TableCoordinator: Coordinator {
         self.window = window
     }
 
-    func start() {
-        viewModel = TableViewModel(coordinator: self)
-        viewController = TableViewController.instantiate(name: "Table")
-        viewController?.viewModel = viewModel
-        if let viewController = viewController {
-            window.rootUINavigationController()?.pushViewController(viewController, animated: true)
-        }
-    }
-
     func toDetail(user: CellUserModel) {
         let controller = DetailCoordinator(window: window, cellUser: user)
         childCoordinators.append(controller)
@@ -45,5 +36,16 @@ extension TableCoordinator: HaveFilterCoordinator {
 
     func filterDidFinish(with key: String?) {
         viewModel.setFilter(key: key)
+    }
+}
+
+extension TableCoordinator: CoordinatorWithInternetCheck {
+    func startInternetON() {
+        viewModel = TableViewModel(coordinator: self)
+        viewController = TableViewController.instantiate(name: "Table")
+        viewController?.viewModel = viewModel
+        if let viewController = viewController {
+            window.rootUINavigationController()?.pushViewController(viewController, animated: true)
+        }
     }
 }
