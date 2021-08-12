@@ -52,4 +52,11 @@ extension TableViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.didSelect(at: indexPath)
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let selectedRow = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: selectedRow, animated: true)
+        }
+    }
 }
