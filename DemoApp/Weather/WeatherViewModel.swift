@@ -23,7 +23,7 @@ class WeatherViewModel {
     let title = "Weather"
 
     var labelText: Observable<[LabelNames: String]> = Observable([:])
-    var thirdLabelColor: Observable<UIColor> = Observable(UIColor.white)
+    var thirdLabelColor: Observable<UIColor> = Observable(UIColor.black)
     var iconImage: Observable<UIImage?> = Observable(nil)
 
     init(coordinator: WeatherCoordinator) {

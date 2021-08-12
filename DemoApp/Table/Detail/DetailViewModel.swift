@@ -22,12 +22,7 @@ class DetailViewModel {
 
     private func getData(userID: Int) {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/users/\(userID)") else { return }
-        Networking().fetchForDetailData(url) { (user, error) in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            guard let user = user else { return }
+        _ = Networking().fetchForDetailData(url).done { user in
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 self.user.value = user
             }

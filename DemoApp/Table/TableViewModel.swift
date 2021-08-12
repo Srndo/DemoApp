@@ -27,12 +27,7 @@ class TableViewModel {
 
     private func getData() {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/users/") else { return }
-        Networking().fetchForTableData(url) { (users, error) in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            guard let users = users else { return }
+        _ = Networking().fetchForTableData(url).done { users in
             for user in users {
                 self.users.append(user)
             }

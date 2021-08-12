@@ -21,12 +21,10 @@ class WeatherHelper {
     }
 
     func getIcon(named iconName: String) -> Promise<UIImage> {
-        return Promise<UIImage> {
-            getFile(named: iconName, completion: $0.resolve)
-        }
-        .recover { _ in
-            self.getIconFromNetwork(named: iconName)
-        }
+        return getFile(named: iconName)
+            .recover { _ in
+                self.getIconFromNetwork(named: iconName)
+            }
     }
 
     func getIconFromNetwork(named iconName: String) -> Promise<UIImage> {
@@ -37,41 +35,40 @@ class WeatherHelper {
             URLSession.shared.dataTask(.promise, with: url)
         }
         .then(on: DispatchQueue.global(qos: .background)) { urlResponse in
-            return Promise {
-                self.saveFile(named: iconName, data: urlResponse.data, completion: $0.resolve)
-            }
-            .then(on: DispatchQueue.global(qos: .background)) {
-                return Promise.value(UIImage(data: urlResponse.data)!)
-            }
+            return self.saveFile(named: iconName, data: urlResponse.data)
+                .then(on: DispatchQueue.global(qos: .background)) {
+                    return Promise.value(UIImage(data: urlResponse.data)!)
+                }
         }
     }
 
-    private func saveFile(named: String, data: Data, completion: @escaping (Error?) -> Void) {
+    private func saveFile(named: String, data: Data) -> Promise<Void> {
         // swiftlint:disable:next line_length
-        guard let path = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first?.appendingPathComponent(named+".png") else { return }
-        DispatchQueue.global(qos: .background).async {
+        guard let path = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first?.appendingPathComponent(named+".png") else { return brokenPromise() }
+        return Promise { seal in
             do {
                 try data.write(to: path)
                 print("Saved image to: " + path.absoluteString)
-                completion(nil)
+                seal.fulfill_()
             } catch {
-                completion(error)
+                // swiftlint:disable:next line_length
+                seal.reject(NSError(domain: "DemoApp", code: 0, userInfo: [NSLocalizedDescriptionKey: "Cannot save image on path: \(path)."]))
             }
         }
     }
 
-    private func getFile(named: String, completion: @escaping (UIImage?, Error?) -> Void) {
-        DispatchQueue.global(qos: .background).async {
-            // swiftlint:disable:next line_length
-            if let path = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first?.appendingPathComponent(named+".png"),
-               let data = try? Data(contentsOf: path),
-               let image = UIImage(data: data) {
-                DispatchQueue.main.async { completion(image, nil) }
-            } else {
-                let error = NSError(domain: "DemoApp",
-                                    code: 0,
-                                    userInfo: [NSLocalizedDescriptionKey: "Image file '\(named)' not found."])
-                DispatchQueue.main.async { completion(nil, error) }
+    private func getFile(named: String) -> Promise<UIImage> {
+        return Promise { seal in
+            DispatchQueue.global(qos: .background).async {
+                // swiftlint:disable:next line_length
+                if let path = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first?.appendingPathComponent(named+".png"),
+                   let data = try? Data(contentsOf: path),
+                   let image = UIImage(data: data) {
+                    seal.fulfill(image)
+                } else {
+                    // swiftlint:disable:next line_length
+                    seal.reject(NSError(domain: "DemoApp", code: 0, userInfo: [NSLocalizedDescriptionKey: "Image file '\(named)' not found."]))
+                }
             }
         }
     }

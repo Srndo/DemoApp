@@ -6,48 +6,50 @@
 //
 
 import Alamofire
+import PromiseKit
 
 class Networking {
-    typealias WebserviceTableDataResponse = ([CellUserModel]?, Error?) -> Void
-    typealias WebserviceDetailDataResponse = (DetailUserModel?, Error?) -> Void
 
-    func fetchForTableData(_ url: URL, completition: @escaping WebserviceTableDataResponse) {
-        Alamofire.request(url).validate().responseJSON { response in
-            if let error = response.error {
-                completition(nil, error)
-                return
+    func fetchForTableData(_ url: URL) -> Promise<[CellUserModel]> {
+        return Promise { seal in
+            Alamofire.request(url).validate().responseJSON { response in
+                if let error = response.error {
+                    seal.reject(error)
+                    return
+                }
+                guard let data = response.data else {
+                    // swiftlint:disable:next line_length
+                    seal.reject(NSError(domain: "DemoApp", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data in response."]))
+                    return
+                }
+                guard let users = try? JSONDecoder().decode([CellUserModel].self, from: data) else {
+                    // swiftlint:disable:next line_length
+                    seal.reject(NSError(domain: "DemoApp", code: 0, userInfo: [NSLocalizedDescriptionKey: "Cannot decode data from response."]))
+                    return
+                }
+                seal.fulfill(users)
             }
-            guard let data = response.data else {
-                // swiftlint:disable:next line_length
-                completition(nil, NSError(domain: "DemoApp", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data in response."]))
-                return
-            }
-            guard let users = try? JSONDecoder().decode([CellUserModel].self, from: data) else {
-                // swiftlint:disable:next line_length
-                completition(nil, NSError(domain: "DemoApp", code: 0, userInfo: [NSLocalizedDescriptionKey: "Cannot decode data from response."]))
-                return
-            }
-            completition(users, nil)
         }
     }
 
-    func fetchForDetailData(_ url: URL, completition: @escaping WebserviceDetailDataResponse) {
-        Alamofire.request(url).validate().responseJSON { response in
-            if let error = response.error {
-                completition(nil, error)
-                return
+    func fetchForDetailData(_ url: URL) -> Promise<DetailUserModel> {
+        return Promise { seal in
+            Alamofire.request(url).validate().responseJSON { response in
+                if let error = response.error {
+                    seal.reject(error)
+                }
+                guard let data = response.data else {
+                    // swiftlint:disable:next line_length
+                    seal.reject(NSError(domain: "DemoApp", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data in response."]))
+                    return
+                }
+                guard let user = try? JSONDecoder().decode(DetailUserModel.self, from: data) else {
+                    // swiftlint:disable:next line_length
+                    seal.reject(NSError(domain: "DemoApp", code: 0, userInfo: [NSLocalizedDescriptionKey: "Cannot decode data from response."]))
+                    return
+                }
+                seal.fulfill(user)
             }
-            guard let data = response.data else {
-                // swiftlint:disable:next line_length
-                completition(nil, NSError(domain: "DemoApp", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data in response."]))
-                return
-            }
-            guard let user = try? JSONDecoder().decode(DetailUserModel.self, from: data) else {
-                // swiftlint:disable:next line_length
-                completition(nil, NSError(domain: "DemoApp", code: 0, userInfo: [NSLocalizedDescriptionKey: "Cannot decode data from response."]))
-                return
-            }
-            completition(user, nil)
         }
     }
 }
