@@ -17,6 +17,7 @@
 		F4A64CF826C413E0006B432F /* Table.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A64CF726C413E0006B432F /* Table.storyboard */; };
 		F4A64CFA26C42150006B432F /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A64CF926C42150006B432F /* CollectionExtension.swift */; };
 		F4A64CFC26C421D3006B432F /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A64CFB26C421D3006B432F /* Filter.storyboard */; };
+		F4A64CFE26C50DD2006B432F /* WeatherLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A64CFD26C50DD2006B432F /* WeatherLocationController.swift */; };
 		F4CA774026BA9C76008860CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA773F26BA9C76008860CD /* AppDelegate.swift */; };
 		F4CA774426BA9C76008860CD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA774326BA9C76008860CD /* MainViewController.swift */; };
 		F4CA774926BA9C78008860CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4CA774826BA9C78008860CD /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		F4A64CF726C413E0006B432F /* Table.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Table.storyboard; sourceTree = "<group>"; };
 		F4A64CF926C42150006B432F /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
 		F4A64CFB26C421D3006B432F /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
+		F4A64CFD26C50DD2006B432F /* WeatherLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocationController.swift; sourceTree = "<group>"; };
 		F4CA773C26BA9C76008860CD /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4CA773F26BA9C76008860CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4CA774326BA9C76008860CD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				F4CA775826BA9D37008860CD /* Coordinator.swift */,
 				F4A64CEF26C3C22A006B432F /* HaveFilterCoordinator.swift */,
 				F4CA779526C14A1B008860CD /* Storyboarded.swift */,
+				F4A64CFD26C50DD2006B432F /* WeatherLocationController.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				F4CA775C26BA9D8C008860CD /* User.swift in Sources */,
 				F4CA779C26C24270008860CD /* WeatherModel.swift in Sources */,
 				F4CA776D26BAA4F8008860CD /* WeatherViewModel.swift in Sources */,
+				F4A64CFE26C50DD2006B432F /* WeatherLocationController.swift in Sources */,
 				F4CA777B26BC047A008860CD /* Label.swift in Sources */,
 				F4CA778E26C11AF0008860CD /* FilterCoordinator.swift in Sources */,
 				F4CA776B26BAA4EF008860CD /* WeatherViewController.swift in Sources */,

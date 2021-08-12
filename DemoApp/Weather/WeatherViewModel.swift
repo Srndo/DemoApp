@@ -8,7 +8,7 @@
 import UIKit
 import PromiseKit
 
-private let errorColor = UIColor(red: 0.96, green: 0.667, blue: 0.690, alpha: 1)
+fileprivate let errorColor = UIColor(red: 0.96, green: 0.667, blue: 0.690, alpha: 1)
 
 class WeatherViewModel {
     enum LabelNames: String {
@@ -32,8 +32,10 @@ class WeatherViewModel {
     }
 
     let backgroundImage = UIImage(named: "landscape")
+}
 
-    private func updateWithCurrentLocation() {
+extension WeatherViewModel: WeatherLocationController {
+    func updateWithCurrentLocation() {
         locationHelper.getLocation()
             .done { [weak self] placemark in
                 self?.handleLocation(placemark: placemark)
@@ -54,13 +56,13 @@ class WeatherViewModel {
             }
     }
 
-    private func handleLocation(placemark: CLPlacemark) {
+    func handleLocation(placemark: CLPlacemark) {
         handleLocation( city: placemark.locality,
                        state: placemark.administrativeArea,
                        coordinate: placemark.location!.coordinate)
     }
 
-    private func handleLocation( city: String?,
+    func handleLocation( city: String?,
                                 state: String?,                             // swiftlint:disable:this vertical_parameter_alignment line_length
                                 coordinate: CLLocationCoordinate2D) {        // swiftlint:disable:this vertical_parameter_alignment line_length
         if let city = city, let state = state {
