@@ -11,7 +11,7 @@ protocol Storyboarded {
     static func instantiate(name: String) -> Self
 }
 
-extension Storyboarded {
+extension Storyboarded where Self: UIViewController {
     static func instantiate(name: String) -> Self {
         // swiftlint:disable:next identifier_name
         let id = String(describing: self)
