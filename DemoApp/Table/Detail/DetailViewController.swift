@@ -7,8 +7,11 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, Storyboarded {
+class DetailViewController: UIViewController, Storyboarded, InternetCheck {
     var viewModel: DetailViewModel!
+
+    @IBOutlet weak var noInternetView: UIView!
+    @IBOutlet weak var noInternetLabel: UILabel!
 
     @IBOutlet weak var nameLabel: UILabel?
     @IBOutlet weak var addressLabel: UILabel?
@@ -20,6 +23,7 @@ class DetailViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = viewModel.title
+        inicializeNoInternetView()
         viewModel.user.bind { _ in
             self.fillLabels()
             self.stopSpinner()

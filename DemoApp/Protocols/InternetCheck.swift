@@ -27,7 +27,7 @@ extension InternetCheck {
 
     func inicializeNoInternetView() {
         setLabelText()
-        if !Connectivity.isConnectedToInternet {
+        if Connectivity.isConnectedToInternet {
            hideView()
         } else {
             showView()

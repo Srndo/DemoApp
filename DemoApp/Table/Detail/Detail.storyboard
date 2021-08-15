@@ -64,22 +64,44 @@
                                     <constraint firstItem="UF5-TY-KLH" firstAttribute="top" secondItem="1Rr-RM-0yF" secondAttribute="bottom" id="zTM-8o-zaL"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iof-XL-INP">
+                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yH-sa-wmY">
+                                        <rect key="frame" x="174" y="372.66666666666669" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="3yH-sa-wmY" firstAttribute="centerX" secondItem="Iof-XL-INP" secondAttribute="centerX" id="EwV-MW-C7F"/>
+                                    <constraint firstItem="3yH-sa-wmY" firstAttribute="centerY" secondItem="Iof-XL-INP" secondAttribute="centerY" id="IM2-qw-y3m"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cY4-sO-32n" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="0Rn-TE-cb5"/>
+                            <constraint firstItem="Iof-XL-INP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="2Tf-80-dFS"/>
                             <constraint firstItem="cY4-sO-32n" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="5S9-Mz-H78"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="cY4-sO-32n" secondAttribute="bottom" constant="20" id="6Ls-aR-NNV"/>
+                            <constraint firstItem="Iof-XL-INP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="9Lu-77-IXA"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cY4-sO-32n" secondAttribute="trailing" constant="30" id="9X3-o4-VB6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Iof-XL-INP" secondAttribute="bottom" id="PXf-Js-eLp"/>
                             <constraint firstItem="cY4-sO-32n" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="Z1P-BA-ssu"/>
                             <constraint firstItem="cY4-sO-32n" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="dJ8-Kb-2mx"/>
+                            <constraint firstAttribute="trailing" secondItem="Iof-XL-INP" secondAttribute="trailing" id="ljD-P9-5Gd"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="1Rr-RM-0yF" id="fo5-qx-kdV"/>
                         <outlet property="emailLabel" destination="aMw-BM-f1B" id="nNE-yS-Kf1"/>
                         <outlet property="nameLabel" destination="Spn-Ja-qwZ" id="hs7-eT-S5N"/>
+                        <outlet property="noInternetLabel" destination="3yH-sa-wmY" id="lrp-l9-ITE"/>
+                        <outlet property="noInternetView" destination="Iof-XL-INP" id="D5y-Rk-Aaz"/>
                         <outlet property="phoneLabel" destination="UF5-TY-KLH" id="m07-lw-jgO"/>
                     </connections>
                 </viewController>

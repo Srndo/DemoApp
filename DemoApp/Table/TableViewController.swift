@@ -7,14 +7,18 @@
 
 import UIKit
 
-class TableViewController: UIViewController, Storyboarded {
+class TableViewController: UIViewController, Storyboarded, InternetCheck {
 
     @IBOutlet var tableView: UITableView!
     var viewModel: TableViewModel!
 
+    @IBOutlet weak var noInternetView: UIView!
+    @IBOutlet weak var noInternetLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
+        inicializeNoInternetView()
         title = viewModel.title
         view.backgroundColor = viewModel.backgroundColor
         viewModel.filtredData.bind { _ in
