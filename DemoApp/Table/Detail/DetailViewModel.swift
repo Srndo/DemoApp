@@ -24,7 +24,7 @@ class DetailViewModel {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/users/\(userID)") else { return }
         _ = Networking().fetchForDetailData(url).done { user in
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                self.user.value = user
+                self.user.value = DetailUserModel(user)
             }
         }
     }

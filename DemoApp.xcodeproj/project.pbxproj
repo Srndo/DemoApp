@@ -24,6 +24,7 @@
 		F4A64D0726C515A5006B432F /* NotInternetConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A64D0626C515A5006B432F /* NotInternetConnectionViewController.swift */; };
 		F4A64D0926C515AD006B432F /* NotInternetConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A64D0826C515AD006B432F /* NotInternetConnectionViewModel.swift */; };
 		F4A64D0B26C515B9006B432F /* NotInternetConnection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A64D0A26C515B9006B432F /* NotInternetConnection.storyboard */; };
+		F4A64D0D26C5C03A006B432F /* CustomCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A64D0C26C5C03A006B432F /* CustomCellViewModel.swift */; };
 		F4CA774026BA9C76008860CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA773F26BA9C76008860CD /* AppDelegate.swift */; };
 		F4CA774426BA9C76008860CD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA774326BA9C76008860CD /* MainViewController.swift */; };
 		F4CA774926BA9C78008860CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4CA774826BA9C78008860CD /* Assets.xcassets */; };
@@ -81,6 +82,7 @@
 		F4A64D0626C515A5006B432F /* NotInternetConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotInternetConnectionViewController.swift; sourceTree = "<group>"; };
 		F4A64D0826C515AD006B432F /* NotInternetConnectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotInternetConnectionViewModel.swift; sourceTree = "<group>"; };
 		F4A64D0A26C515B9006B432F /* NotInternetConnection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotInternetConnection.storyboard; sourceTree = "<group>"; };
+		F4A64D0C26C5C03A006B432F /* CustomCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellViewModel.swift; sourceTree = "<group>"; };
 		F4CA773C26BA9C76008860CD /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4CA773F26BA9C76008860CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4CA774326BA9C76008860CD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				F4CA777F26BC0FEC008860CD /* CustomCell.swift */,
+				F4A64D0C26C5C03A006B432F /* CustomCellViewModel.swift */,
 				F4CA778826BD3279008860CD /* CustomCellModel.swift */,
 				F4A64CF526C41091006B432F /* CustomCell.xib */,
 			);
@@ -482,6 +485,7 @@
 				F4CA77A226C27728008860CD /* BrokenPromise.swift in Sources */,
 				31805F8626BC318D00E0115D /* MainViewModel.swift in Sources */,
 				F4CA778B26C11209008860CD /* Spinner.swift in Sources */,
+				F4A64D0D26C5C03A006B432F /* CustomCellViewModel.swift in Sources */,
 				F4A64CEE26C3B5FC006B432F /* Observable.swift in Sources */,
 				F4CA777326BAA94E008860CD /* MyButton.swift in Sources */,
 				F4CA779026C11B9C008860CD /* FilterViewController.swift in Sources */,

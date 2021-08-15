@@ -10,7 +10,7 @@ import PromiseKit
 
 class Networking {
 
-    func fetchForTableData(_ url: URL) -> Promise<[CellUserModel]> {
+    func fetchForTableData(_ url: URL) -> Promise<[User]> {
         return Promise { seal in
             Alamofire.request(url).validate().responseJSON { response in
                 if let error = response.error {
@@ -22,7 +22,7 @@ class Networking {
                     seal.reject(NSError(domain: "DemoApp", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data in response."]))
                     return
                 }
-                guard let users = try? JSONDecoder().decode([CellUserModel].self, from: data) else {
+                guard let users = try? JSONDecoder().decode([User].self, from: data) else {
                     // swiftlint:disable:next line_length
                     seal.reject(NSError(domain: "DemoApp", code: 0, userInfo: [NSLocalizedDescriptionKey: "Cannot decode data from response."]))
                     return
@@ -32,7 +32,7 @@ class Networking {
         }
     }
 
-    func fetchForDetailData(_ url: URL) -> Promise<DetailUserModel> {
+    func fetchForDetailData(_ url: URL) -> Promise<User> {
         return Promise { seal in
             Alamofire.request(url).validate().responseJSON { response in
                 if let error = response.error {
@@ -43,7 +43,7 @@ class Networking {
                     seal.reject(NSError(domain: "DemoApp", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data in response."]))
                     return
                 }
-                guard let user = try? JSONDecoder().decode(DetailUserModel.self, from: data) else {
+                guard let user = try? JSONDecoder().decode(User.self, from: data) else {
                     // swiftlint:disable:next line_length
                     seal.reject(NSError(domain: "DemoApp", code: 0, userInfo: [NSLocalizedDescriptionKey: "Cannot decode data from response."]))
                     return
