@@ -16,10 +16,8 @@ class WeatherCoordinator: Coordinator {
     init(window: UIWindow?) {
         self.window = window
     }
-}
 
-extension WeatherCoordinator: CoordinatorWithInternetCheck {
-    func startInternetON() {
+    func start() {
         viewController = WeatherViewController.instantiate(name: "Weather")
         viewController?.viewModel = WeatherViewModel(coordinator: self)
         if  let viewController = viewController {

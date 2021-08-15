@@ -7,9 +7,12 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController, Storyboarded {
-
+class WeatherViewController: UIViewController, Storyboarded, InternetCheck {
     var viewModel: WeatherViewModel!
+
+    @IBOutlet weak var noInternetView: UIView!
+    @IBOutlet weak var noInternetLabel: UILabel!
+
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var firstLabel: UILabel!
     @IBOutlet weak var secondLabel: UILabel!
@@ -18,6 +21,7 @@ class WeatherViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        inicializeNoInternetView()
         setBackgroundImage()
         title = viewModel.title
         viewModel.labelText.bind { _ in
