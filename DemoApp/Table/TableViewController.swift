@@ -35,7 +35,7 @@ extension TableViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.register(nib, forCellReuseIdentifier: "\(viewModel.cellType)")
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = viewModel.rowHeight
+        tableView.estimatedRowHeight = viewModel.rowHeight
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,12 +45,17 @@ extension TableViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable:next force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: "\(viewModel.cellType)") as! CustomCell
-        cell.set(cell: viewModel.filtredData.value[indexPath.row])
+        cell.viewModel = CustomCellViewModel(cellUser: viewModel.filtredData.value[indexPath.row])
+        cell.inicialize()
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.didSelect(at: indexPath)
+    }
+
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
     }
 
     override func viewDidAppear(_ animated: Bool) {

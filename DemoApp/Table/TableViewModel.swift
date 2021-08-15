@@ -29,7 +29,7 @@ class TableViewModel {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/users/") else { return }
         _ = Networking().fetchForTableData(url).done { users in
             for user in users {
-                self.users.append(user)
+                self.users.append(CellUserModel(by: user))
             }
             self.filtredData.value = self.users
         }
