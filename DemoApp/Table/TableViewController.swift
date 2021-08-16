@@ -7,18 +7,13 @@
 
 import UIKit
 
-class TableViewController: UIViewController, Storyboarded, InternetCheck {
+class TableViewController: UIViewController, Storyboarded {
 
     @IBOutlet var tableView: UITableView!
     var viewModel: TableViewModel!
 
     @IBOutlet weak var noInternetView: UIView!
     @IBOutlet weak var noInternetLabel: UILabel!
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        inicializeNoInternetView()
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +29,13 @@ class TableViewController: UIViewController, Storyboarded, InternetCheck {
 
     @objc func navButtonTap() {
         viewModel.navButtonTap()
+    }
+}
+
+extension TableViewController: InternetCheck {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        inicializeNoInternetView()
     }
 }
 

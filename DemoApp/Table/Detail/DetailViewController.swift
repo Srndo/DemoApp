@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, Storyboarded, InternetCheck {
+class DetailViewController: UIViewController, Storyboarded, SpinnerView {
     var viewModel: DetailViewModel!
 
     @IBOutlet weak var noInternetView: UIView!
@@ -17,12 +17,8 @@ class DetailViewController: UIViewController, Storyboarded, InternetCheck {
     @IBOutlet weak var addressLabel: UILabel?
     @IBOutlet weak var phoneLabel: UILabel?
     @IBOutlet weak var emailLabel: UILabel?
-    private let spinner = SpinnerViewController()
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        inicializeNoInternetView()
-    }
+    var spinner = SpinnerViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,20 +26,22 @@ class DetailViewController: UIViewController, Storyboarded, InternetCheck {
         title = viewModel.title
         viewModel.user.bind { _ in
             self.fillLabels()
-            self.stopSpinner()
+            self.spinnerStop(viewController: self)
         }
-        spinner.createSpinnerView(parent: self)
+        spinnerStart(viewController: self)
     }
 
-    func stopSpinner() {
-        guard spinner.parent != nil else { return }
-        self.spinner.removeSpinnerView(parent: self)
-    }
-
-    func fillLabels() {
+    private func fillLabels() {
         nameLabel?.text = viewModel.user.value.name
         addressLabel?.text = "\(viewModel.user.value.address.city), \(viewModel.user.value.address.street)"
         phoneLabel?.text = viewModel.user.value.phone
         emailLabel?.text = viewModel.user.value.email
+    }
+}
+
+extension DetailViewController: InternetCheck {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        inicializeNoInternetView()
     }
 }
