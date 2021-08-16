@@ -17,8 +17,8 @@ struct DetailUserModel: Decodable {
         self.name = user?.name ?? "asd"
         self.email = user?.email ?? ""
         self.phone = user?.phone ?? ""
-        let geo = GeoLocation(lat: "", lng: "")
-        self.address = Address(street: "", suite: "", city: "", zipcode: "", geo: geo)
+        let geo = user?.address.geo ?? GeoLocation(lat: "", lng: "")
+        self.address = user?.address ??  Address(street: "", suite: "", city: "", zipcode: "", geo: geo)
     }
 
     init(_ cellUser: CellUserModel) {

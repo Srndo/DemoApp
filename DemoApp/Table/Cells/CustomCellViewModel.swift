@@ -17,12 +17,12 @@ class CustomCellViewModel {
         self.headerImage.value = UIImage(named: "landscape")!
         self.headerTitle.value = cellUser.name
         self.headerText.value = String(cellUser.id)
-        self.textView.value = dynamicLengthOfLabel()
+        self.textView.value = dynamicLengthOfLabel(count: cellUser.id)
     }
 
-    private func dynamicLengthOfLabel() -> String {
+    private func dynamicLengthOfLabel(count: Int) -> String {
         // swiftlint:disable:next line_length
         let text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        return String(repeating: text, count: Int.random(in: 1..<5))
+        return String(repeating: text, count: count % 5)
     }
 }
