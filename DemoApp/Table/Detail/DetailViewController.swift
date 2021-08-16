@@ -19,11 +19,15 @@ class DetailViewController: UIViewController, Storyboarded, InternetCheck {
     @IBOutlet weak var emailLabel: UILabel?
     private let spinner = SpinnerViewController()
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        inicializeNoInternetView()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = viewModel.title
-        inicializeNoInternetView()
         viewModel.user.bind { _ in
             self.fillLabels()
             self.stopSpinner()

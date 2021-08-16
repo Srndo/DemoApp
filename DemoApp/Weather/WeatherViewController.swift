@@ -19,9 +19,13 @@ class WeatherViewController: UIViewController, Storyboarded, InternetCheck {
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var thirdLabel: UILabel!
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        inicializeNoInternetView()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        inicializeNoInternetView()
         setBackgroundImage()
         title = viewModel.title
         viewModel.labelText.bind { _ in

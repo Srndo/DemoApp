@@ -15,10 +15,14 @@ class TableViewController: UIViewController, Storyboarded, InternetCheck {
     @IBOutlet weak var noInternetView: UIView!
     @IBOutlet weak var noInternetLabel: UILabel!
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        inicializeNoInternetView()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
-        inicializeNoInternetView()
         title = viewModel.title
         view.backgroundColor = viewModel.backgroundColor
         viewModel.filtredData.bind { _ in
