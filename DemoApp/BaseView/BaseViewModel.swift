@@ -12,6 +12,9 @@ class BaseViewModel {
     var lastTask: (() -> Void)?
     var title: String { "Default title" }
     var backgroundColor: UIColor { .systemBackground }
+    lazy var errorView: UIView = {
+        return createErrorView()
+    }()
 
     let internetON: Observable<Bool> = {
         return Observable(Connectivity.isConnectedToInternet)
@@ -21,11 +24,7 @@ class BaseViewModel {
         print("NavButtonTapped")
     }
 
-    lazy var errorView: UIView = {
-        return createErrorView()
-    }()
-
-    func createErrorView() -> UIView {
+    private func createErrorView() -> UIView {
         let view = UIView()
         let label = setupErrorLabel()
         view.backgroundColor = .white
@@ -38,7 +37,7 @@ class BaseViewModel {
         return view
     }
 
-    func setupErrorLabel() -> UILabel {
+    private func setupErrorLabel() -> UILabel {
         let label = UILabel()
         label.text = "ERROR: No internet connection."
         label.textColor = .systemRed
