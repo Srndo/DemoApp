@@ -7,10 +7,8 @@
 
 import UIKit
 
-class TableViewController: UIViewController, Storyboarded {
-
+class TableViewController: BaseViewController<TableViewModel>, Storyboarded {
     @IBOutlet var tableView: UITableView!
-    var viewModel: TableViewModel!
 
     @IBOutlet weak var noInternetView: UIView!
     @IBOutlet weak var noInternetLabel: UILabel!
@@ -18,24 +16,9 @@ class TableViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
-        title = viewModel.title
-        view.backgroundColor = viewModel.backgroundColor
         viewModel.filtredData.bind { _ in
             self.tableView.reloadData()
         }
-        // swiftlint:disable:next line_length
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: viewModel.navButtonType, target: self, action: #selector(navButtonTap))
-    }
-
-    @objc func navButtonTap() {
-        viewModel.navButtonTap()
-    }
-}
-
-extension TableViewController: InternetCheck {
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        inicializeNoInternetView()
     }
 }
 

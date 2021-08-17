@@ -7,21 +7,23 @@
 
 import UIKit
 
-class TableViewModel {
+class TableViewModel: BaseViewModel {
 
     var coordinator: TableCoordinator!
 
-    let navButtonType: UIBarButtonItem.SystemItem = .search
-    let title = "Table"
+    override var navButtonType: UIBarButtonItem.SystemItem? { .search }
+    override var title: String { "Table" }
+    override var backgroundColor: UIColor { .systemBackground }
+
     let cellType = CustomCell.self
     let rowHeight: CGFloat = 100
-    let backgroundColor: UIColor = .systemBackground
 
     private var users: [CellUserModel] = []
     var filtredData: Observable<[CellUserModel]> = Observable([])
 
     init(coordinator: TableCoordinator) {
         self.coordinator = coordinator
+        super.init()
         getData()
     }
 
@@ -35,7 +37,7 @@ class TableViewModel {
         }
     }
 
-    func navButtonTap() {
+    override func navButtonTapped() {
         coordinator.showFilter()
     }
 

@@ -20,22 +20,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZe-fd-Hys">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6c-dd-BY4">
-                                        <rect key="frame" x="186" y="437.5" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="K6c-dd-BY4" firstAttribute="centerY" secondItem="YZe-fd-Hys" secondAttribute="centerY" id="Ada-we-PQk"/>
-                                    <constraint firstItem="K6c-dd-BY4" firstAttribute="centerX" secondItem="YZe-fd-Hys" secondAttribute="centerX" id="Dv2-Mu-fXo"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -43,16 +27,10 @@
                             <constraint firstItem="aaQ-RQ-t9X" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="AYH-OZ-550"/>
                             <constraint firstAttribute="trailing" secondItem="aaQ-RQ-t9X" secondAttribute="trailing" id="Igg-Te-wj0"/>
                             <constraint firstItem="aaQ-RQ-t9X" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="MPT-DH-avm"/>
-                            <constraint firstItem="YZe-fd-Hys" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Yud-ma-pOf"/>
-                            <constraint firstAttribute="trailing" secondItem="YZe-fd-Hys" secondAttribute="trailing" id="dFX-do-dYq"/>
-                            <constraint firstItem="YZe-fd-Hys" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="jbk-Rd-YH2"/>
                             <constraint firstAttribute="bottom" secondItem="aaQ-RQ-t9X" secondAttribute="bottom" id="okf-dt-xRn"/>
-                            <constraint firstAttribute="bottom" secondItem="YZe-fd-Hys" secondAttribute="bottom" id="wU8-oe-Dq5"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="noInternetLabel" destination="K6c-dd-BY4" id="IE9-7L-MPb"/>
-                        <outlet property="noInternetView" destination="YZe-fd-Hys" id="WVY-cD-0vb"/>
                         <outlet property="tableView" destination="aaQ-RQ-t9X" id="gwq-mh-44Y"/>
                     </connections>
                 </viewController>
