@@ -7,17 +7,13 @@
 
 import UIKit
 
-class MainViewController: UIViewController, Storyboarded {
-
-    var viewModel: MainViewModel!
+class MainViewController: BaseViewController<MainViewModel>, Storyboarded {
 
     @IBOutlet weak var button1: UIButton?
     @IBOutlet weak var button2: UIButton?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        title = viewModel.viewTitle
         button1?.setTitle(viewModel.titleButton1, for: .normal)
         button2?.setTitle(viewModel.titleButton2, for: .normal)
     }

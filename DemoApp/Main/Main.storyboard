@@ -50,7 +50,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="6OZ-31-RyI"/>
                                     <constraint firstAttribute="height" constant="128" id="BqY-fU-6ek"/>
