@@ -36,7 +36,7 @@ class BaseViewController<T: BaseViewModel>: UIViewController {
 extension BaseViewController {
     private func setupViewForNoInternetConnection() {
         viewModel.internetON.bind { value in
-            if value {
+            if !value {
                 self.showNoInternetConnection()
             } else {
                 self.hideNoInternetConnection()
