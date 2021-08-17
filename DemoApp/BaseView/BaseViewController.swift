@@ -9,9 +9,6 @@ import UIKit
 
 class BaseViewController<T: BaseViewModel>: UIViewController {
     var viewModel: T!
-    lazy var errorView: UIView = {
-        return createErrorView()
-    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +32,9 @@ class BaseViewController<T: BaseViewModel>: UIViewController {
 
 extension BaseViewController {
     private func setupViewForNoInternetConnection() {
+        viewModel.errorView.frame = self.view.frame
         viewModel.internetON.bind { value in
-            if !value {
+            if value {
                 self.showNoInternetConnection()
             } else {
                 self.hideNoInternetConnection()
@@ -45,31 +43,10 @@ extension BaseViewController {
     }
 
     private func hideNoInternetConnection() {
-        errorView.removeFromSuperview()
+        viewModel.errorView.removeFromSuperview()
     }
 
     private func showNoInternetConnection() {
-        self.view.addSubview(errorView)
-    }
-
-    private func createErrorView() -> UIView {
-        let view = UIView()
-        let label = setupErrorLabel()
-        view.frame = self.view.frame
-        view.backgroundColor = .white
-        view.alpha = 0.95
-        label.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(label)
-
-        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        return view
-    }
-
-    private func setupErrorLabel() -> UILabel {
-        let label = UILabel()
-        label.text = "ERROR: No internet connection."
-        label.textColor = .systemRed
-        return label
+        self.view.addSubview(viewModel.errorView)
     }
 }

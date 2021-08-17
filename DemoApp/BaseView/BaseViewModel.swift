@@ -20,4 +20,28 @@ class BaseViewModel {
     func navButtonTapped() {
         print("NavButtonTapped")
     }
+
+    lazy var errorView: UIView = {
+        return createErrorView()
+    }()
+
+    func createErrorView() -> UIView {
+        let view = UIView()
+        let label = setupErrorLabel()
+        view.backgroundColor = .white
+        view.alpha = 0.95
+        label.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(label)
+
+        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        return view
+    }
+
+    func setupErrorLabel() -> UILabel {
+        let label = UILabel()
+        label.text = "ERROR: No internet connection."
+        label.textColor = .systemRed
+        return label
+    }
 }
