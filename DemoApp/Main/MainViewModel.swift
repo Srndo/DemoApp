@@ -11,7 +11,6 @@ class MainViewModel: BaseViewModel {
 
     var coordinator: MainCoordinator!
     override var title: String { "Main" }
-    override var navButtonType: UIBarButtonItem.SystemItem? { .action }
 
     var titleButton1: String = "To Weather"
     var titleButton2: String = "To Table"

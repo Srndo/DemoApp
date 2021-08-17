@@ -21,7 +21,6 @@
 		F4A64CFC26C421D3006B432F /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A64CFB26C421D3006B432F /* Filter.storyboard */; };
 		F4A64CFE26C50DD2006B432F /* WeatherLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A64CFD26C50DD2006B432F /* WeatherLocationController.swift */; };
 		F4A64D0026C511A4006B432F /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A64CFF26C511A4006B432F /* Connectivity.swift */; };
-		F4A64D0226C51489006B432F /* InternetCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A64D0126C51489006B432F /* InternetCheck.swift */; };
 		F4A64D0D26C5C03A006B432F /* CustomCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A64D0C26C5C03A006B432F /* CustomCellViewModel.swift */; };
 		F4A64D0F26CA6D3C006B432F /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A64D0E26CA6D3B006B432F /* SpinnerView.swift */; };
 		F4CA774026BA9C76008860CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA773F26BA9C76008860CD /* AppDelegate.swift */; };
@@ -76,7 +75,6 @@
 		F4A64CFB26C421D3006B432F /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
 		F4A64CFD26C50DD2006B432F /* WeatherLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocationController.swift; sourceTree = "<group>"; };
 		F4A64CFF26C511A4006B432F /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
-		F4A64D0126C51489006B432F /* InternetCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetCheck.swift; sourceTree = "<group>"; };
 		F4A64D0C26C5C03A006B432F /* CustomCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellViewModel.swift; sourceTree = "<group>"; };
 		F4A64D0E26CA6D3B006B432F /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		F4CA773C26BA9C76008860CD /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -265,7 +263,6 @@
 				F4A64CEF26C3C22A006B432F /* HaveFilterCoordinator.swift */,
 				F4CA779526C14A1B008860CD /* Storyboarded.swift */,
 				F4A64CFD26C50DD2006B432F /* WeatherLocationController.swift */,
-				F4A64D0126C51489006B432F /* InternetCheck.swift */,
 				F4A64D0E26CA6D3B006B432F /* SpinnerView.swift */,
 			);
 			path = Protocols;
@@ -478,7 +475,6 @@
 				F4A64D0D26C5C03A006B432F /* CustomCellViewModel.swift in Sources */,
 				F4A64CEE26C3B5FC006B432F /* Observable.swift in Sources */,
 				F4CA779026C11B9C008860CD /* FilterViewController.swift in Sources */,
-				F4A64D0226C51489006B432F /* InternetCheck.swift in Sources */,
 				F4CA778926BD3279008860CD /* CustomCellModel.swift in Sources */,
 				F4CA776526BAA48F008860CD /* TableViewController.swift in Sources */,
 				F4CA779E26C247AF008860CD /* LocationHelper.swift in Sources */,
