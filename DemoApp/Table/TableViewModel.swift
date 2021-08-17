@@ -15,7 +15,7 @@ class TableViewModel: BaseViewModel {
 
     var coordinator: TableCoordinator!
 
-    override var navButtonType: UIBarButtonItem.SystemItem? { .search }
+//    override var navButtonType: UIBarButtonItem.SystemItem? { .search }
     override var title: String { "Table" }
     override var backgroundColor: UIColor { .systemBackground }
 

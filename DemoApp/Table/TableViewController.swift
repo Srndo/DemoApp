@@ -32,6 +32,7 @@ extension TableViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         viewModel.searchBy = selectedScope == 0 ? .name : .ID
+        viewModel.setFilter(key: searchBar.text)
     }
 }
 
