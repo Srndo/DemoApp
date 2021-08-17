@@ -7,15 +7,12 @@
 
 import UIKit
 
-class FilterViewController: UIViewController, Storyboarded {
-    var viewModel: FilterViewModel!
-
+class FilterViewController: BaseViewController<FilterViewModel>, Storyboarded {
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var textField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = viewModel.backgroundColor
     }
 
     @IBAction func buttonTap(_ sender: Any) {

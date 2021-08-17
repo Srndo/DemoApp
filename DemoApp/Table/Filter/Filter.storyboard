@@ -37,7 +37,6 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="BIb-3z-p2o" firstAttribute="width" secondItem="I1L-1J-6q3" secondAttribute="width" multiplier="0.7" id="E7b-Xc-GrW"/>
                                     <constraint firstItem="M1Z-AB-S7s" firstAttribute="height" secondItem="I1L-1J-6q3" secondAttribute="height" multiplier="0.3" id="LEb-Q9-qmt"/>

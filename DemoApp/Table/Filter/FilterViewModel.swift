@@ -7,14 +7,14 @@
 
 import UIKit
 
-class FilterViewModel {
+class FilterViewModel: BaseViewModel {
     var coordinator: FilterCoordinator!
 
-    let backgroundColor: UIColor = .white
-    let buttonTitle = "Search"
+    override var title: String { "Search" }
 
     init(coordinator: FilterCoordinator) {
         self.coordinator = coordinator
+        super.init()
     }
 
     func buttonTap(key: String?) {
