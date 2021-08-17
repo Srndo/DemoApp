@@ -15,7 +15,7 @@ class TableViewModel: BaseViewModel {
 
     var coordinator: TableCoordinator!
 
-//    override var navButtonType: UIBarButtonItem.SystemItem? { .search }
+    override var navButtonType: UIBarButtonItem.SystemItem? { .bookmarks }
     override var title: String { "Table" }
     override var backgroundColor: UIColor { .systemBackground }
 
@@ -23,7 +23,8 @@ class TableViewModel: BaseViewModel {
     let rowHeight: CGFloat = 100
     let searchBarTitles = ["By name", "By ID"]
     let searchBarPlaceholder = "Search"
-        
+    var ascending: Bool = true
+
     var searchBy: SearchByConstants = .name
 
     private var users: [CellUserModel] = []
@@ -46,7 +47,8 @@ class TableViewModel: BaseViewModel {
     }
 
     override func navButtonTapped() {
-        coordinator.showFilter()
+        ascending.toggle()
+        sort(ascending: ascending)
     }
 
     func setFilter(key: String?) {
@@ -61,6 +63,14 @@ class TableViewModel: BaseViewModel {
             case .ID:
                 return $0.id == Int(key)
             }
+        }
+    }
+
+    func sort(ascending: Bool) {
+        if ascending {
+            filtredData.value.sort { $0.id < $1.id }
+        } else {
+            filtredData.value.sort { $0.id > $1.id }
         }
     }
 
