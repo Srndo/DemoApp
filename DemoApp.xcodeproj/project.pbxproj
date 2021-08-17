@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0C6CC556005145560D50D3D9 /* Pods_DemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C550CC1E04CC5064E71D109 /* Pods_DemoApp.framework */; };
 		31805F8626BC318D00E0115D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31805F8526BC318D00E0115D /* MainViewModel.swift */; };
+		F473651326CB92C300E70D19 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F473651226CB92C300E70D19 /* BaseViewController.swift */; };
+		F473651626CB92E300E70D19 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F473651526CB92E300E70D19 /* BaseViewModel.swift */; };
 		F491DD2226C3AC2100379FD4 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491DD2126C3AC2100379FD4 /* APIKeys.swift */; };
 		F4A64CEE26C3B5FC006B432F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A64CED26C3B5FC006B432F /* Observable.swift */; };
 		F4A64CF026C3C22A006B432F /* HaveFilterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A64CEF26C3C22A006B432F /* HaveFilterCoordinator.swift */; };
@@ -37,11 +39,9 @@
 		F4CA776B26BAA4EF008860CD /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA776A26BAA4EF008860CD /* WeatherViewController.swift */; };
 		F4CA776D26BAA4F8008860CD /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA776C26BAA4F8008860CD /* WeatherViewModel.swift */; };
 		F4CA777026BAA7E3008860CD /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA776F26BAA7E3008860CD /* Networking.swift */; };
-		F4CA777326BAA94E008860CD /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777226BAA94E008860CD /* MyButton.swift */; };
 		F4CA777526BBBE16008860CD /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777426BBBE16008860CD /* DetailCoordinator.swift */; };
 		F4CA777726BBBE21008860CD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777626BBBE21008860CD /* DetailViewController.swift */; };
 		F4CA777926BBBE31008860CD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777826BBBE31008860CD /* DetailViewModel.swift */; };
-		F4CA777B26BC047A008860CD /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777A26BC047A008860CD /* Label.swift */; };
 		F4CA778026BC0FEC008860CD /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA777F26BC0FEC008860CD /* CustomCell.swift */; };
 		F4CA778726BD28BA008860CD /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA778626BD28BA008860CD /* UIWindowExtension.swift */; };
 		F4CA778926BD3279008860CD /* CustomCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA778826BD3279008860CD /* CustomCellModel.swift */; };
@@ -64,6 +64,8 @@
 		63A7BD26EF9DECD099597A19 /* Pods-DemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.debug.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		6AEB697BF7F194B13D4F4398 /* Pods-DemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.release.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		8C550CC1E04CC5064E71D109 /* Pods_DemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F473651226CB92C300E70D19 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F473651526CB92E300E70D19 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		F491DD2126C3AC2100379FD4 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		F4A64CED26C3B5FC006B432F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		F4A64CEF26C3C22A006B432F /* HaveFilterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveFilterCoordinator.swift; sourceTree = "<group>"; };
@@ -94,11 +96,9 @@
 		F4CA776A26BAA4EF008860CD /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		F4CA776C26BAA4F8008860CD /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		F4CA776F26BAA7E3008860CD /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		F4CA777226BAA94E008860CD /* MyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
 		F4CA777426BBBE16008860CD /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
 		F4CA777626BBBE21008860CD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F4CA777826BBBE31008860CD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
-		F4CA777A26BC047A008860CD /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		F4CA777F26BC0FEC008860CD /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		F4CA778626BD28BA008860CD /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
 		F4CA778826BD3279008860CD /* CustomCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellModel.swift; sourceTree = "<group>"; };
@@ -156,6 +156,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F473651426CB92CD00E70D19 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				F473651226CB92C300E70D19 /* BaseViewController.swift */,
+				F473651526CB92E300E70D19 /* BaseViewModel.swift */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
 		F4CA773326BA9C76008860CD = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +194,7 @@
 				F4CA775426BA9C8E008860CD /* Table */,
 				F4CA775726BA9D24008860CD /* Protocols */,
 				F4CA775A26BA9D6F008860CD /* Models */,
+				F473651426CB92CD00E70D19 /* BaseView */,
 				F4CA777126BAA928008860CD /* UIElements */,
 				F4CA776F26BAA7E3008860CD /* Networking.swift */,
 				F4A64CED26C3B5FC006B432F /* Observable.swift */,
@@ -273,8 +283,6 @@
 		F4CA777126BAA928008860CD /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
-				F4CA777226BAA94E008860CD /* MyButton.swift */,
-				F4CA777A26BC047A008860CD /* Label.swift */,
 				F4CA778A26C11209008860CD /* Spinner.swift */,
 			);
 			path = UIElements;
@@ -443,6 +451,7 @@
 				F4A64D0026C511A4006B432F /* Connectivity.swift in Sources */,
 				F4CA775926BA9D37008860CD /* Coordinator.swift in Sources */,
 				F4CA778726BD28BA008860CD /* UIWindowExtension.swift in Sources */,
+				F473651626CB92E300E70D19 /* BaseViewModel.swift in Sources */,
 				F4CA776026BA9E9B008860CD /* MainCoordinator.swift in Sources */,
 				F4A64CFA26C42150006B432F /* CollectionExtension.swift in Sources */,
 				F4CA774426BA9C76008860CD /* MainViewController.swift in Sources */,
@@ -453,11 +462,11 @@
 				F4CA779C26C24270008860CD /* WeatherModel.swift in Sources */,
 				F4CA776D26BAA4F8008860CD /* WeatherViewModel.swift in Sources */,
 				F4A64CFE26C50DD2006B432F /* WeatherLocationController.swift in Sources */,
-				F4CA777B26BC047A008860CD /* Label.swift in Sources */,
 				F4CA778E26C11AF0008860CD /* FilterCoordinator.swift in Sources */,
 				F4CA776B26BAA4EF008860CD /* WeatherViewController.swift in Sources */,
 				F4CA776926BAA4DB008860CD /* WeatherCoordinator.swift in Sources */,
 				F4A64CF226C3CCBD006B432F /* DetailModel.swift in Sources */,
+				F473651326CB92C300E70D19 /* BaseViewController.swift in Sources */,
 				F4CA77A026C24969008860CD /* WeatherHelper.swift in Sources */,
 				F4CA776226BAA479008860CD /* TableCoordinator.swift in Sources */,
 				F4A64CF026C3C22A006B432F /* HaveFilterCoordinator.swift in Sources */,
@@ -468,7 +477,6 @@
 				F4CA778B26C11209008860CD /* Spinner.swift in Sources */,
 				F4A64D0D26C5C03A006B432F /* CustomCellViewModel.swift in Sources */,
 				F4A64CEE26C3B5FC006B432F /* Observable.swift in Sources */,
-				F4CA777326BAA94E008860CD /* MyButton.swift in Sources */,
 				F4CA779026C11B9C008860CD /* FilterViewController.swift in Sources */,
 				F4A64D0226C51489006B432F /* InternetCheck.swift in Sources */,
 				F4CA778926BD3279008860CD /* CustomCellModel.swift in Sources */,
