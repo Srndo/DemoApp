@@ -59,7 +59,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="vWj-5X-OLw" firstAttribute="leading" secondItem="W9e-nn-n1D" secondAttribute="leading" constant="8" id="6q6-2E-Nlm"/>
                                     <constraint firstItem="ifF-0U-bzY" firstAttribute="top" secondItem="vWj-5X-OLw" secondAttribute="bottom" constant="8" id="GdV-nG-4s3"/>
@@ -74,7 +73,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="W9e-nn-n1D" firstAttribute="leading" secondItem="o8r-8P-O7Y" secondAttribute="trailing" constant="8" id="7EH-RH-gQP"/>
                             <constraint firstItem="o8r-8P-O7Y" firstAttribute="top" secondItem="MaI-3b-inH" secondAttribute="top" constant="8" id="JEJ-0a-Mgm"/>
@@ -118,12 +116,9 @@
     <resources>
         <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="106"/>
         <image name="landscape" width="1200" height="1500"/>
-        <image name="text.bubble.fill" catalog="system" width="32" height="32"/>
+        <image name="text.bubble.fill" catalog="system" width="128" height="110"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
