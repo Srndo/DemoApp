@@ -50,17 +50,17 @@ class TableViewModel: BaseViewModel {
     }
 
     func setFilter(key: String?) {
-        if let key = key {
-            self.filtredData.value = self.users.filter {
-                switch searchBy {
-                case .name:
-                    return $0.name.contains(key)
-                case .ID:
-                    return $0.id == Int(key)
-                }
+        guard let key = key, key != "" else {
+            filtredData.value = users
+            return
+        }
+        filtredData.value = self.users.filter {
+            switch searchBy {
+            case .name:
+                return $0.name.contains(key)
+            case .ID:
+                return $0.id == Int(key)
             }
-        } else {
-            self.filtredData.value = self.users
         }
     }
 
