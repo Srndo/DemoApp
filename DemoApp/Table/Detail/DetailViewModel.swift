@@ -7,16 +7,17 @@
 
 import UIKit
 
-class DetailViewModel {
+class DetailViewModel: BaseViewModel {
 
     var coordinator: DetailCoordinator!
 
-    let title = "Detail"
+    override var title: String { "Detail" }
     var user: Observable<DetailUserModel>
 
     init(coordinator: DetailCoordinator, user: CellUserModel) {
         self.coordinator = coordinator
         self.user = Observable(DetailUserModel(user))
+        super.init()
         getData(userID: user.id)
     }
 

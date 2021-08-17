@@ -7,11 +7,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, Storyboarded, SpinnerView {
-    var viewModel: DetailViewModel!
-
-    @IBOutlet weak var noInternetView: UIView!
-    @IBOutlet weak var noInternetLabel: UILabel!
+class DetailViewController: BaseViewController<DetailViewModel>, Storyboarded, SpinnerView {
 
     @IBOutlet weak var nameLabel: UILabel?
     @IBOutlet weak var addressLabel: UILabel?
@@ -22,8 +18,6 @@ class DetailViewController: UIViewController, Storyboarded, SpinnerView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        title = viewModel.title
         viewModel.user.bind { _ in
             self.fillLabels()
             self.spinnerStop(viewController: self)
@@ -36,12 +30,5 @@ class DetailViewController: UIViewController, Storyboarded, SpinnerView {
         addressLabel?.text = "\(viewModel.user.value.address.city), \(viewModel.user.value.address.street)"
         phoneLabel?.text = viewModel.user.value.phone
         emailLabel?.text = viewModel.user.value.email
-    }
-}
-
-extension DetailViewController: InternetCheck {
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        inicializeNoInternetView()
     }
 }

@@ -16,22 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iof-XL-INP">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yH-sa-wmY">
-                                        <rect key="frame" x="139" y="229.5" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="3yH-sa-wmY" firstAttribute="centerX" secondItem="Iof-XL-INP" secondAttribute="centerX" id="EwV-MW-C7F"/>
-                                    <constraint firstItem="3yH-sa-wmY" firstAttribute="centerY" secondItem="Iof-XL-INP" secondAttribute="centerY" id="IM2-qw-y3m"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cY4-sO-32n">
                                 <rect key="frame" x="109" y="149" width="102.5" height="182"/>
                                 <subviews>
@@ -83,10 +67,6 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Iof-XL-INP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="2Tf-80-dFS"/>
-                            <constraint firstItem="Iof-XL-INP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="9Lu-77-IXA"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Iof-XL-INP" secondAttribute="bottom" id="PXf-Js-eLp"/>
-                            <constraint firstAttribute="trailing" secondItem="Iof-XL-INP" secondAttribute="trailing" id="ljD-P9-5Gd"/>
                             <constraint firstItem="cY4-sO-32n" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="n1V-Jp-L1o"/>
                             <constraint firstItem="cY4-sO-32n" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="w6j-DA-yQh"/>
                         </constraints>
@@ -95,8 +75,6 @@
                         <outlet property="addressLabel" destination="1Rr-RM-0yF" id="fo5-qx-kdV"/>
                         <outlet property="emailLabel" destination="aMw-BM-f1B" id="nNE-yS-Kf1"/>
                         <outlet property="nameLabel" destination="Spn-Ja-qwZ" id="hs7-eT-S5N"/>
-                        <outlet property="noInternetLabel" destination="3yH-sa-wmY" id="lrp-l9-ITE"/>
-                        <outlet property="noInternetView" destination="Iof-XL-INP" id="D5y-Rk-Aaz"/>
                         <outlet property="phoneLabel" destination="UF5-TY-KLH" id="m07-lw-jgO"/>
                     </connections>
                 </viewController>
