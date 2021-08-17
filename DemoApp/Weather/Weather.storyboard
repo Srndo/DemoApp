@@ -65,46 +65,24 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="800" id="goB-Hy-1tF"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kOV-bU-ilK" userLabel="NoInternetView">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tux-Bv-wv0">
-                                        <rect key="frame" x="491" y="672.5" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="tux-Bv-wv0" firstAttribute="centerY" secondItem="kOV-bU-ilK" secondAttribute="centerY" id="9W0-Ri-E2l"/>
-                                    <constraint firstItem="tux-Bv-wv0" firstAttribute="centerX" secondItem="kOV-bU-ilK" secondAttribute="centerX" id="t0f-Y1-Ydi"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SE0-zp-kTN" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="0mJ-wQ-cKJ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="SE0-zp-kTN" secondAttribute="bottom" id="7yr-2y-NT9"/>
-                            <constraint firstAttribute="bottom" secondItem="kOV-bU-ilK" secondAttribute="bottom" id="BDN-Uo-vAJ"/>
-                            <constraint firstAttribute="trailing" secondItem="kOV-bU-ilK" secondAttribute="trailing" id="CMu-mB-6ss"/>
                             <constraint firstItem="SE0-zp-kTN" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="IMY-bp-Qez"/>
                             <constraint firstItem="SE0-zp-kTN" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vDu-zF-Fre" secondAttribute="top" id="V0o-qM-yA7"/>
                             <constraint firstItem="EO1-zn-dvW" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="YpE-Ie-9FM"/>
                             <constraint firstItem="EO1-zn-dvW" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="dC0-N5-87C"/>
                             <constraint firstAttribute="trailing" secondItem="EO1-zn-dvW" secondAttribute="trailing" id="duJ-6g-Iiv"/>
                             <constraint firstAttribute="bottom" secondItem="EO1-zn-dvW" secondAttribute="bottom" id="f0U-Kb-8Ys"/>
-                            <constraint firstItem="kOV-bU-ilK" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="nrf-kO-b4t"/>
-                            <constraint firstItem="kOV-bU-ilK" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="rEm-yk-gnw"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="firstLabel" destination="oxD-3P-7hi" id="l7r-7J-Aer"/>
                         <outlet property="iconImage" destination="yFO-WX-XbF" id="uLs-Za-nQ6"/>
                         <outlet property="imageView" destination="EO1-zn-dvW" id="5MV-we-KDY"/>
-                        <outlet property="noInternetLabel" destination="tux-Bv-wv0" id="XC8-Qj-X27"/>
-                        <outlet property="noInternetView" destination="kOV-bU-ilK" id="pAg-vp-THs"/>
                         <outlet property="secondLabel" destination="eKD-T6-S2I" id="jyN-bv-wIE"/>
                         <outlet property="thirdLabel" destination="A82-d6-cqc" id="U6E-rQ-4IZ"/>
                     </connections>

@@ -7,12 +7,7 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController, Storyboarded {
-    var viewModel: WeatherViewModel!
-
-    @IBOutlet weak var noInternetView: UIView!
-    @IBOutlet weak var noInternetLabel: UILabel!
-
+class WeatherViewController: BaseViewController<WeatherViewModel>, Storyboarded {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var firstLabel: UILabel!
     @IBOutlet weak var secondLabel: UILabel!
@@ -22,7 +17,6 @@ class WeatherViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackgroundImage()
-        title = viewModel.title
         bindViewModel()
     }
 
@@ -48,12 +42,5 @@ class WeatherViewController: UIViewController, Storyboarded {
         firstLabel.text = viewModel.labelText.value[.first]
         secondLabel.text = viewModel.labelText.value[.second]
         thirdLabel.text = viewModel.labelText.value[.third]
-    }
-}
-
-extension WeatherViewController: InternetCheck {
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        inicializeNoInternetView()
     }
 }

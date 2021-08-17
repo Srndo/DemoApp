@@ -10,7 +10,7 @@ import PromiseKit
 
 private let errorColor = UIColor(red: 0.96, green: 0.667, blue: 0.690, alpha: 1)
 
-class WeatherViewModel {
+class WeatherViewModel: BaseViewModel {
     enum LabelNames: String {
         case first = "temp"
         case second = "place"
@@ -20,7 +20,7 @@ class WeatherViewModel {
     let coordinator: WeatherCoordinator
     let weatherHelper = WeatherHelper()
     let locationHelper = LocationHelper()
-    let title = "Weather"
+    override var title: String { "Weather" }
 
     var labelText: Observable<[LabelNames: String]> = Observable([:])
     var thirdLabelColor: Observable<UIColor> = Observable(UIColor.black)
@@ -28,6 +28,7 @@ class WeatherViewModel {
 
     init(coordinator: WeatherCoordinator) {
         self.coordinator = coordinator
+        super.init()
         updateWithCurrentLocation()
     }
 
