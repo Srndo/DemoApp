@@ -8,6 +8,10 @@
 import UIKit
 
 class TableViewModel: BaseViewModel {
+    enum SearchByConstants: String {
+        case name
+        case ID     // swiftlint:disable:this identifier_name
+    }
 
     var coordinator: TableCoordinator!
 
@@ -17,6 +21,7 @@ class TableViewModel: BaseViewModel {
 
     let cellType = CustomCell.self
     let rowHeight: CGFloat = 100
+    var searchBy: SearchByConstants = .name
 
     private var users: [CellUserModel] = []
     var filtredData: Observable<[CellUserModel]> = Observable([])
@@ -43,7 +48,14 @@ class TableViewModel: BaseViewModel {
 
     func setFilter(key: String?) {
         if let key = key {
-            self.filtredData.value = self.users.filter { $0.name.starts(with: key) }
+            self.filtredData.value = self.users.filter {
+                switch searchBy {
+                case .name:
+                    return $0.name.contains(key)
+                case .ID:
+                    return $0.id == Int(key)
+                }
+            }
         } else {
             self.filtredData.value = self.users
         }

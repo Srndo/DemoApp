@@ -9,9 +9,7 @@ import UIKit
 
 class TableViewController: BaseViewController<TableViewModel>, Storyboarded {
     @IBOutlet var tableView: UITableView!
-
-    @IBOutlet weak var noInternetView: UIView!
-    @IBOutlet weak var noInternetLabel: UILabel!
+    @IBOutlet var searchBar: UISearchBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +20,21 @@ class TableViewController: BaseViewController<TableViewModel>, Storyboarded {
     }
 }
 
+extension TableViewController: UISearchBarDelegate {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = nil
+        viewModel.setFilter(key: nil)
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.setFilter(key: searchText)
+    }
+
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        viewModel.searchBy = selectedScope == 0 ? .name : .ID
+    }
+}
+
 extension TableViewController: UITableViewDataSource, UITableViewDelegate {
     private func configureTable() {
         let nib = UINib(nibName: "\(viewModel.cellType)", bundle: nil)
@@ -29,6 +42,15 @@ extension TableViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = viewModel.rowHeight
+
+        configureSearchBar()
+        tableView.tableHeaderView = searchBar
+    }
+
+    private func configureSearchBar() {
+        searchBar.delegate = self
+        searchBar.scopeButtonTitles = ["By name", "By ID"]
+        searchBar.placeholder = "Search"
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

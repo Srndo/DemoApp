@@ -34,7 +34,7 @@ extension BaseViewController {
     private func setupViewForNoInternetConnection() {
         viewModel.errorView.frame = self.view.frame
         viewModel.internetON.bind { value in
-            if value {
+            if !value {
                 self.showNoInternetConnection()
             } else {
                 self.hideNoInternetConnection()

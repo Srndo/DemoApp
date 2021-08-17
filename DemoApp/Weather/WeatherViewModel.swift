@@ -21,6 +21,7 @@ class WeatherViewModel: BaseViewModel {
     let weatherHelper = WeatherHelper()
     let locationHelper = LocationHelper()
     override var title: String { "Weather" }
+    override var navButtonType: UIBarButtonItem.SystemItem? { .refresh }
 
     var labelText: Observable<[LabelNames: String]> = Observable([:])
     var thirdLabelColor: Observable<UIColor> = Observable(UIColor.black)
@@ -33,6 +34,10 @@ class WeatherViewModel: BaseViewModel {
     }
 
     let backgroundImage = UIImage(named: "landscape")
+
+    override func navButtonTapped() {
+        updateWithCurrentLocation()
+    }
 }
 
 extension WeatherViewModel: WeatherLocationController {
