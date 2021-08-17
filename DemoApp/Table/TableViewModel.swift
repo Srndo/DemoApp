@@ -21,6 +21,9 @@ class TableViewModel: BaseViewModel {
 
     let cellType = CustomCell.self
     let rowHeight: CGFloat = 100
+    let searchBarTitles = ["By name", "By ID"]
+    let searchBarPlaceholder = "Search"
+        
     var searchBy: SearchByConstants = .name
 
     private var users: [CellUserModel] = []

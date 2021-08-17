@@ -50,8 +50,8 @@ extension TableViewController: UITableViewDataSource, UITableViewDelegate {
 
     private func configureSearchBar() {
         searchBar.delegate = self
-        searchBar.scopeButtonTitles = ["By name", "By ID"]
-        searchBar.placeholder = "Search"
+        searchBar.scopeButtonTitles = viewModel.searchBarTitles
+        searchBar.placeholder = viewModel.searchBarPlaceholder
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
