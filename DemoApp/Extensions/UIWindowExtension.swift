@@ -8,13 +8,24 @@
 import UIKit
 
 extension Optional where Wrapped == UIWindow {
-    func rootUINavigationController() -> UINavigationController? {
+    private func rootViewController() -> UIViewController? {
         guard let window = self else {
             return nil
         }
-        guard let rooViewController = window.rootViewController as? UINavigationController else {
+        return  window.rootViewController
+    }
+
+    func rootUINavigationController() -> UINavigationController? {
+        guard let rootNavigationViewController = rootViewController() as? UINavigationController else {
             return nil
         }
-        return rooViewController
+        return rootNavigationViewController
+    }
+
+    func rootTabBarController() -> UITabBarController? {
+        guard let rootTabBarController = rootViewController() as? UITabBarController else {
+            return nil
+        }
+        return rootTabBarController
     }
 }
