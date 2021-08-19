@@ -13,7 +13,6 @@ class WeatherViewController: BaseViewController<WeatherViewModel>, Storyboarded 
     @IBOutlet weak var secondLabel: UILabel!
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var thirdLabel: UILabel!
-    @IBOutlet weak var tabBar: UITabBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,20 +42,5 @@ class WeatherViewController: BaseViewController<WeatherViewModel>, Storyboarded 
         firstLabel.text = viewModel.labelText.value[.first]
         secondLabel.text = viewModel.labelText.value[.second]
         thirdLabel.text = viewModel.labelText.value[.third]
-    }
-}
-
-extension WeatherViewController: UITabBarDelegate {
-    private func setTabBarItems() {
-        tabBar.items = viewModel.tabBarItems
-    }
-
-    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        switch item.tag {
-        case 0:
-            viewModel.tabBarItem1Tap()
-        case 1:
-            viewModel.tabBarItem2Tap()
-        }
     }
 }

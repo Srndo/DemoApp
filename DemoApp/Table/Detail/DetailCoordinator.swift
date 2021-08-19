@@ -8,14 +8,14 @@
 import UIKit
 
 class DetailCoordinator: Coordinator {
-    var window: UIWindow?
+    var navigationController: UINavigationController?
     var viewController: DetailViewController?
     var childCoordinators: [Coordinator] = []
     var parentCoordinator: Coordinator?
     var user: CellUserModel
 
-    init(window: UIWindow?, cellUser: CellUserModel) {
-        self.window = window
+    init(navigationController: UINavigationController?, cellUser: CellUserModel) {
+        self.navigationController = navigationController
         self.user = cellUser
     }
 
@@ -23,7 +23,7 @@ class DetailCoordinator: Coordinator {
         viewController = DetailViewController.instantiate(name: "Detail")
         viewController?.viewModel = DetailViewModel(coordinator: self, user: user)
         if let viewController = viewController {
-            window.rootUINavigationController()?.pushViewController(viewController, animated: true)
+            navigationController?.pushViewController(viewController, animated: true)
         }
     }
 }
