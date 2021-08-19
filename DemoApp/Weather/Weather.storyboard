@@ -65,29 +65,18 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="800" id="goB-Hy-1tF"/>
                                 </constraints>
                             </view>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lit-rW-2gg">
-                                <rect key="frame" x="0.0" y="1296" width="1024" height="70"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem systemItem="favorites" id="6fP-KT-TSZ"/>
-                                    <tabBarItem systemItem="more" id="JV9-cx-gdI"/>
-                                </items>
-                            </tabBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SE0-zp-kTN" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="0mJ-wQ-cKJ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="SE0-zp-kTN" secondAttribute="bottom" id="7yr-2y-NT9"/>
-                            <constraint firstAttribute="bottom" secondItem="lit-rW-2gg" secondAttribute="bottom" id="Ach-Xw-tia"/>
                             <constraint firstItem="SE0-zp-kTN" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="IMY-bp-Qez"/>
                             <constraint firstItem="SE0-zp-kTN" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vDu-zF-Fre" secondAttribute="top" id="V0o-qM-yA7"/>
                             <constraint firstItem="EO1-zn-dvW" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="YpE-Ie-9FM"/>
                             <constraint firstItem="EO1-zn-dvW" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="dC0-N5-87C"/>
                             <constraint firstAttribute="trailing" secondItem="EO1-zn-dvW" secondAttribute="trailing" id="duJ-6g-Iiv"/>
                             <constraint firstAttribute="bottom" secondItem="EO1-zn-dvW" secondAttribute="bottom" id="f0U-Kb-8Ys"/>
-                            <constraint firstItem="lit-rW-2gg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="itt-Gl-xx9"/>
-                            <constraint firstAttribute="trailing" secondItem="lit-rW-2gg" secondAttribute="trailing" id="peP-ZA-UGe"/>
                         </constraints>
                     </view>
                     <connections>
@@ -95,7 +84,6 @@
                         <outlet property="iconImage" destination="yFO-WX-XbF" id="uLs-Za-nQ6"/>
                         <outlet property="imageView" destination="EO1-zn-dvW" id="5MV-we-KDY"/>
                         <outlet property="secondLabel" destination="eKD-T6-S2I" id="jyN-bv-wIE"/>
-                        <outlet property="tabBar" destination="lit-rW-2gg" id="m5E-q6-P6P"/>
                         <outlet property="thirdLabel" destination="A82-d6-cqc" id="U6E-rQ-4IZ"/>
                     </connections>
                 </viewController>
