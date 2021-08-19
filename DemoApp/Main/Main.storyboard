@@ -60,11 +60,22 @@
                                     <constraint firstAttribute="bottom" secondItem="daW-k5-qxJ" secondAttribute="bottom" constant="12" id="wEn-fF-dtU"/>
                                 </constraints>
                             </view>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMg-jr-TFj">
+                                <rect key="frame" x="0.0" y="813" width="414" height="83"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="CqD-v5-W5m"/>
+                                    <tabBarItem systemItem="more" id="V8r-bp-lgO"/>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="MMg-jr-TFj" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="IDB-QS-rkm"/>
                             <constraint firstItem="uco-9G-gNK" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Km5-sp-ufC"/>
+                            <constraint firstItem="MMg-jr-TFj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="SIU-cF-9gN"/>
+                            <constraint firstAttribute="bottom" secondItem="MMg-jr-TFj" secondAttribute="bottom" id="Wp1-sc-mNE"/>
                             <constraint firstItem="uco-9G-gNK" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="ZIO-kO-7Iz"/>
                             <constraint firstItem="uco-9G-gNK" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="qDJ-7C-ALR"/>
                             <constraint firstItem="uco-9G-gNK" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="tDK-XS-nBm"/>
@@ -93,6 +104,7 @@
                     <connections>
                         <outlet property="button1" destination="eeD-tM-2EV" id="yOA-ol-0ME"/>
                         <outlet property="button2" destination="daW-k5-qxJ" id="cS1-nR-XVf"/>
+                        <outlet property="tabBar" destination="MMg-jr-TFj" id="w0k-Io-4wf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
