@@ -14,9 +14,14 @@ class MainViewModel: BaseViewModel {
 
     var titleButton1: String = "To Weather"
     var titleButton2: String = "To Table"
+    let tabBarItems: [UITabBarItem]
 
     init(coordinator: MainCoordinator) {
         self.coordinator = coordinator
+        self.tabBarItems = [
+            UITabBarItem(title: "Table", image: UIImage(systemName: "tablecells"), tag: 0),
+            UITabBarItem(title: "Weather", image: UIImage(systemName: "thermometer"), tag: 1)
+        ]
     }
 
     func button1Tapped() {
