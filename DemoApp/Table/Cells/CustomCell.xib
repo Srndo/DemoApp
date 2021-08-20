@@ -84,7 +84,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uu8-jo-6zp">
-                        <rect key="frame" x="28" y="92" width="679" height="240"/>
+                        <rect key="frame" x="28" y="92" width="679" height="122"/>
                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                         <nil key="textColor"/>
@@ -96,7 +96,7 @@
                     <constraint firstAttribute="trailing" secondItem="d6M-8Q-tIm" secondAttribute="trailing" constant="8" id="A8m-oQ-apG"/>
                     <constraint firstItem="uu8-jo-6zp" firstAttribute="leading" secondItem="8Tq-Xu-uo8" secondAttribute="leadingMargin" constant="8" id="JsV-kk-JhC"/>
                     <constraint firstItem="MaI-3b-inH" firstAttribute="top" secondItem="8Tq-Xu-uo8" secondAttribute="top" constant="8" id="Lv1-zs-OZt"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="uu8-jo-6zp" secondAttribute="bottom" constant="8" id="Pbt-9c-w6g"/>
+                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="uu8-jo-6zp" secondAttribute="bottom" constant="8" id="Pbt-9c-w6g"/>
                     <constraint firstItem="MaI-3b-inH" firstAttribute="leading" secondItem="8Tq-Xu-uo8" secondAttribute="leading" constant="8" id="fYU-uI-lyB"/>
                     <constraint firstItem="uu8-jo-6zp" firstAttribute="top" secondItem="MaI-3b-inH" secondAttribute="bottom" constant="8" id="fdN-HU-bZA"/>
                     <constraint firstItem="d6M-8Q-tIm" firstAttribute="top" secondItem="8Tq-Xu-uo8" secondAttribute="top" constant="8" id="ldU-bO-i0h"/>
