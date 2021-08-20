@@ -43,6 +43,7 @@ extension TableViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = viewModel.rowHeight
+        tableView.backgroundColor = viewModel.backgroundColor
 
         configureSearchBar()
         tableView.tableHeaderView = searchBar
@@ -52,6 +53,7 @@ extension TableViewController: UITableViewDataSource, UITableViewDelegate {
         searchBar.delegate = self
         searchBar.scopeButtonTitles = viewModel.searchBarTitles
         searchBar.placeholder = viewModel.searchBarPlaceholder
+        searchBar.setBackground(color: viewModel.backgroundColor)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

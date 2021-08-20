@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0C6CC556005145560D50D3D9 /* Pods_DemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C550CC1E04CC5064E71D109 /* Pods_DemoApp.framework */; };
+		F401297326CFC31F0081B37D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401297226CFC31F0081B37D /* UIColorExtension.swift */; };
+		F401297526CFC35C0081B37D /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401297426CFC35C0081B37D /* UINavigationBar.swift */; };
+		F401297726CFC4C00081B37D /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401297626CFC4C00081B37D /* UISearchBar.swift */; };
 		F473651326CB92C300E70D19 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F473651226CB92C300E70D19 /* BaseViewController.swift */; };
 		F473651626CB92E300E70D19 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F473651526CB92E300E70D19 /* BaseViewModel.swift */; };
 		F491DD2226C3AC2100379FD4 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491DD2126C3AC2100379FD4 /* APIKeys.swift */; };
@@ -54,6 +57,9 @@
 		63A7BD26EF9DECD099597A19 /* Pods-DemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.debug.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		6AEB697BF7F194B13D4F4398 /* Pods-DemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.release.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		8C550CC1E04CC5064E71D109 /* Pods_DemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F401297226CFC31F0081B37D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		F401297426CFC35C0081B37D /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
+		F401297626CFC4C00081B37D /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		F473651226CB92C300E70D19 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F473651526CB92E300E70D19 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		F491DD2126C3AC2100379FD4 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
@@ -269,6 +275,9 @@
 			children = (
 				F4CA778626BD28BA008860CD /* UIWindowExtension.swift */,
 				F4A64CF926C42150006B432F /* CollectionExtension.swift */,
+				F401297226CFC31F0081B37D /* UIColorExtension.swift */,
+				F401297426CFC35C0081B37D /* UINavigationBar.swift */,
+				F401297626CFC4C00081B37D /* UISearchBar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -431,16 +440,19 @@
 				F4CA77A026C24969008860CD /* WeatherHelper.swift in Sources */,
 				F4CA776226BAA479008860CD /* TableCoordinator.swift in Sources */,
 				F4CA77A226C27728008860CD /* BrokenPromise.swift in Sources */,
+				F401297326CFC31F0081B37D /* UIColorExtension.swift in Sources */,
 				F4A64D0F26CA6D3C006B432F /* SpinnerView.swift in Sources */,
 				F4CA778B26C11209008860CD /* Spinner.swift in Sources */,
 				F4A64D0D26C5C03A006B432F /* CustomCellViewModel.swift in Sources */,
 				F4A64CEE26C3B5FC006B432F /* Observable.swift in Sources */,
 				F4CA778926BD3279008860CD /* CustomCellModel.swift in Sources */,
 				F4CA776526BAA48F008860CD /* TableViewController.swift in Sources */,
+				F401297726CFC4C00081B37D /* UISearchBar.swift in Sources */,
 				F4CA779E26C247AF008860CD /* LocationHelper.swift in Sources */,
 				F4CA779626C14A1B008860CD /* Storyboarded.swift in Sources */,
 				F4CA777726BBBE21008860CD /* DetailViewController.swift in Sources */,
 				F4CA775E26BA9DBB008860CD /* AppCoordinator.swift in Sources */,
+				F401297526CFC35C0081B37D /* UINavigationBar.swift in Sources */,
 				F491DD2226C3AC2100379FD4 /* APIKeys.swift in Sources */,
 				F4CA777026BAA7E3008860CD /* Networking.swift in Sources */,
 			);

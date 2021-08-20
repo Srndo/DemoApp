@@ -11,7 +11,7 @@ class BaseViewModel {
     var navButtonType: UIBarButtonItem.SystemItem? { nil }
     var lastTask: (() -> Void)?
     var title: String { "Default title" }
-    var backgroundColor: UIColor { .systemBackground }
+    var backgroundColor: UIColor { .Background.blueLight }
     lazy var errorView: UIView = {
         return createErrorView()
     }()

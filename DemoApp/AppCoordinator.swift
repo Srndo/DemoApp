@@ -14,7 +14,6 @@ class AppCoordinator: Coordinator {
 
     required init(_ window: UIWindow?) {
         self.window = window
-
     }
 
     func start() {
