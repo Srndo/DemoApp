@@ -8,20 +8,14 @@
 import UIKit
 
 class WeatherCoordinator: Coordinator {
-    var window: UIWindow?
     var viewController: WeatherViewController?
     var childCoordinators: [Coordinator] = []
     var parentCoordinator: Coordinator?
 
-    init(window: UIWindow?) {
-        self.window = window
-    }
-
     func start() {
         viewController = WeatherViewController.instantiate(name: "Weather")
         viewController?.viewModel = WeatherViewModel(coordinator: self)
-        if  let viewController = viewController {
-            window.rootUINavigationController()?.pushViewController(viewController, animated: true)
-        }
+        // swiftlint:disable:next line_length
+        viewController?.tabBarItem = UITabBarItem(title: "Weather", image: UIImage(systemName: "thermometer.sun"), selectedImage: UIImage(systemName: "thermometer.sun.fill"))
     }
 }

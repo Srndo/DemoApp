@@ -27,6 +27,7 @@ class CustomCell: UITableViewCell {
     func inicialize() {
         roundHeaderImage()
         guard viewModel != nil else { fatalError("CustomCell viewModel is nil") }
+        backgroundColor = .Background.blueLight
         setBindings()
     }
 

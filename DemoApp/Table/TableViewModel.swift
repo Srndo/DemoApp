@@ -17,7 +17,6 @@ class TableViewModel: BaseViewModel {
 
     override var navButtonType: UIBarButtonItem.SystemItem? { .bookmarks }
     override var title: String { "Table" }
-    override var backgroundColor: UIColor { .systemBackground }
 
     let cellType = CustomCell.self
     let rowHeight: CGFloat = 100

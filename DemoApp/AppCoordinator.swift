@@ -14,16 +14,11 @@ class AppCoordinator: Coordinator {
 
     required init(_ window: UIWindow?) {
         self.window = window
-
     }
 
     func start() {
-        let navigationViewController = UINavigationController()
-
-        window?.rootViewController = navigationViewController
-
-        let mainCoordinator = MainCoordinator(window: window)
-        childCoordinators.append(mainCoordinator)
+        let mainCoordinator = TabBarCoordinator(window: window)
+        window?.rootViewController = UITabBarController()
         mainCoordinator.start()
     }
 

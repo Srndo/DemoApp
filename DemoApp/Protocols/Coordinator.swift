@@ -9,7 +9,6 @@ import UIKit
 import Foundation
 
 protocol Coordinator: AnyObject {
-    var window: UIWindow? { get }
     var childCoordinators: [Coordinator] { get set }
     var parentCoordinator: Coordinator? { get set }
 

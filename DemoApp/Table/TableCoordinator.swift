@@ -8,42 +8,22 @@
 import UIKit
 
 class TableCoordinator: Coordinator {
-    var window: UIWindow?
     var viewController: TableViewController?
     var childCoordinators: [Coordinator] = []
     var parentCoordinator: Coordinator?
-    var viewModel: TableViewModel!
-
-    init(window: UIWindow?) {
-        self.window = window
-    }
 
     func start() {
-        viewModel = TableViewModel(coordinator: self)
         viewController = TableViewController.instantiate(name: "Table")
-        viewController?.viewModel = viewModel
-        if let viewController = viewController {
-            window.rootUINavigationController()?.pushViewController(viewController, animated: true)
-        }
+        viewController?.viewModel = TableViewModel(coordinator: self)
+        // swiftlint:disable:next line_length
+        viewController?.tabBarItem = UITabBarItem(title: "table", image: UIImage(systemName: "table"), selectedImage: UIImage(systemName: "table.fill"))
     }
 
     func toDetail(user: CellUserModel) {
-        let controller = DetailCoordinator(window: window, cellUser: user)
+        guard let navigationController = viewController?.navigationController else { return }
+        let controller = DetailCoordinator(navigationController: navigationController, cellUser: user)
         childCoordinators.append(controller)
         controller.parentCoordinator = self
         controller.start()
-    }
-}
-
-extension TableCoordinator: HaveFilterCoordinator {
-    func showFilter() {
-        let controller = FilterCoordinator(window: window)
-        childCoordinators.append(controller)
-        controller.parentCoordinator = self
-        controller.start()
-    }
-
-    func filterDidFinish(with key: String?) {
-        viewModel.setFilter(key: key)
     }
 }

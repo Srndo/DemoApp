@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aaQ-RQ-t9X">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <searchBar key="tableFooterView" contentMode="redraw" showsCancelButton="YES" showsScopeBar="YES" id="uDA-92-TJQ">
-                                    <rect key="frame" x="0.0" y="5" width="414" height="51"/>
+                                <searchBar key="tableFooterView" contentMode="redraw" showsScopeBar="YES" id="uDA-92-TJQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <scopeButtonTitles>
@@ -35,7 +35,7 @@
                         <constraints>
                             <constraint firstItem="aaQ-RQ-t9X" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="AYH-OZ-550"/>
                             <constraint firstAttribute="trailing" secondItem="aaQ-RQ-t9X" secondAttribute="trailing" id="Igg-Te-wj0"/>
-                            <constraint firstItem="aaQ-RQ-t9X" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="MPT-DH-avm"/>
+                            <constraint firstItem="aaQ-RQ-t9X" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="WFS-A9-gwd"/>
                             <constraint firstAttribute="bottom" secondItem="aaQ-RQ-t9X" secondAttribute="bottom" id="okf-dt-xRn"/>
                         </constraints>
                     </view>
