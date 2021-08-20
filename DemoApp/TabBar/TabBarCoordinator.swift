@@ -33,8 +33,9 @@ import UIKit
         tableCoordinator.start()
         if let tableViewController = tableCoordinator.viewController {
             // embed viewController in NavigationController
-            // this is neede if we going to create a hierarchy in TabBarItemView
+            // this is needed if we going to create a hierarchy in TabBarItemView
             let navigationController = UINavigationController(rootViewController: tableViewController)
+            navigationController.navigationBar.makeRounded()
             navigationControllers.append(navigationController)
         }
 
@@ -42,8 +43,9 @@ import UIKit
         weatherCoordinator.start()
         if let weatherViewController = weatherCoordinator.viewController {
             // embed viewController in NavigationController
-            // this is neede if we going to create a hierarchy in TabBarItemView
+            // this is needed if we going to create a hierarchy in TabBarItemView
             let navigationController = UINavigationController(rootViewController: weatherViewController)
+            navigationController.navigationBar.makeRounded()
             navigationControllers.append(navigationController)
         }
 
